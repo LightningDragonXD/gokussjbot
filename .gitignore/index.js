@@ -1,16 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const weather = require('weather-js';
-const Wiki = require("wikijs");
-const express = require("express");
-const app = express();
-const yt = require("./youtube_plugin");
-const youtube_plugin = new yt();
-const AuthDetails = require("./auth.json");
-const functionHelper = require('./functionHelpers.js');
-const ffmpeg = require("ffmpeg");
-const search = require('youtube-search');
-var moment = require("moment");
 var mention = "<@401421641097412608>";
 const opts = {
   maxResults: 3,
