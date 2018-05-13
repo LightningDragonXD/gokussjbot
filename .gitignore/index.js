@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var mention = "<@401421641097412608>";
-const opts = {
-  maxResults: 3,
-  key: AuthDetails.youtube_api_key
-};
 var prefix = "<G>";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, <G>help");
