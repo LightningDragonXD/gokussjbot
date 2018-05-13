@@ -12,7 +12,7 @@ bot.on('message', function(message){
         var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
         var randomr = Math.floor(Math.random()*reveille.length);
         return message.channel.sendFile(reveille[randomr]);
-   }else if(message.content === (prefix+"ça va ?")){
+   }else if(message.content === (prefix+"ça va")){
         message.reply("Oui et toi ?");
    }else if(message.content === (prefix+"oui")){
         message.reply("Tant mieux :blush:");
