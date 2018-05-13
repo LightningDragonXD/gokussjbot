@@ -1,0 +1,32 @@
+{
+  "name": "gokussjbot",
+  "version": "1.0.0",
+  "description": "Voici le bot Goku, il utilisera sa puissance pour vous.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Toshinori",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "discord.js": "^11.3.2",
+    "discord.js-commando": "^0.10.0",
+    "express": "^4.16.3",
+    "fast-csv": "^2.4.1",
+    "ffmpeg": "0.0.4",
+    "google": "^2.1.0",
+    "moment": "^2.22.1",
+    "opusscript": "0.0.6",
+    "querystring": "^0.2.0",
+    "redis-session": "^0.1.0",
+    "redis-sessions": "^1.3.0",
+    "request": "^2.85.0",
+    "util": "^0.10.3",
+    "weather-js": "^2.0.0",
+    "wikijs": "^4.7.0",
+    "youtube-node": "^1.3.2",
+    "youtube-search": "^1.1.0",
+    "ytdl-core": "^0.20.4"
+  }
+}
