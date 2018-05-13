@@ -47,7 +47,7 @@ bot.on('message', function(message){
         bot.user.setUsername(message.substr(9)); 
   }
   music.setVoiceChannel(message.member.voiceChannel);
-    var array_msg = msgc.split(' ');
+    var array_msg = message.content.split(' ');
             messages.push(message);
             switch (array_msg[0]) {
         case (prefix +"play") :
