@@ -56,7 +56,7 @@ bot.on('message', function(message){
     return message.channel.sendFile(coup[randomcoup]);
 
   }
-}if(message.content === (prefix+"blood")){
+}else if(message.content === (prefix+"blood")){
   var blood = ["image/sang.gif","image/sang1.gif"];
   var mentionblood = message.mentions.users.first();
   if(mentionblood){
@@ -64,22 +64,19 @@ bot.on('message', function(message){
     var randomblood = Math.floor(Math.random()*blood.length);
     return message.channel.sendFile(blood[randomblood]);
   }
-}
-if(message.content === (prefix+"Kamehameha")){
+}else if(message.content === (prefix+"Kamehameha")){
   var mentionc1 = message.mentions.users.first();
   if(mentionc1){
     message.channel.sendMessage("KAMEHAMEHAAAAAA !");
     return message.channel.sendFile("image/kamehameha.gif");
   }
-}
-if(message.content === (prefix+"ichigoGT")){
+}else if(message.content === (prefix+"ichigoGT")){
   var mentionc2 = message.mentions.users.first();
   if(mentionc2){
     message.channel.sendMessage("GETSUGA TENSHOOOO !");
     return message.channel.sendFile("image/ichigo.gif");
   }
-}
-if(message.content === (prefix+"hug")){
+}else if(message.content === (prefix+"hug")){
   var image = ["image/hug.gif","image/hug1.gif","image/hug3.gif","image/hug4.gif"];
   var mentionc3 = message.mentions.users.first();
   if(mentionc3){
@@ -87,8 +84,7 @@ if(message.content === (prefix+"hug")){
     var r1 = Math.floor(Math.random()*image.length);
     return message.channel.sendFile(image[r1]);
   }
-}
-if(message.content === (prefix+"colere")){
+}else if(message.content === (prefix+"colere")){
   var colere = ["image/colere.gif","image/colere2.gif","image/colere3.gif","image/colere4.gif"];
   var mentionc4 = message.mentions.users.first();
   if(mentionc4){
@@ -96,29 +92,25 @@ if(message.content === (prefix+"colere")){
     var randomc = Math.floor(Math.random()*colere.length);
     return message.channel.sendFile(colere[randomc]);
   }
-}
-if(message.content === (prefix+"Gilbert")){
+}else if(message.content === (prefix+"Gilbert")){
   var mentionc3 = message.mentions.users.first();
   if(mentionc3){
     message.channel.sendMessage("GILBERT ON T'AIME !");
     return message.channel.sendFile("image/gilbert1.gif"]);
   }
-}
-if(message.content === (prefix+"bouh")){
+}else if(message.content === (prefix+"bouh")){
   var mentionb = message.mentions.users.first();
   if(mentionb){
     message.channel.sendMessage("BOOUUUUUUUUUUUUUUUH :(");
     return message.channel.sendFile("image/bouh.gif");
   }
-}
-if(message.content === (prefix+"black goku")){
+}else if(message.content === (prefix+"black goku")){
   var black = ["image/black.gif","image/black2.gif","image/black3.gif"];
     message.channel.sendMessage("BADASS !");
     var rand = Math.floor(Math.random()*black.length);
     return message.channel.sendFile(black[rand]);
   
-}
-if(message.content === (prefix+"kiss")){
+}else if(message.content === (prefix+"kiss")){
   var kiss = ["image/sao.gif","image/kiss.gif","image/kiss1.gif"];
   var mentionc3 = message.mentions.users.first();
   if(mentionc3){
@@ -126,24 +118,20 @@ if(message.content === (prefix+"kiss")){
     var r2 = Math.floor(Math.random()*kiss.length);
     return message.channel.sendFile(kiss[r2]);
   }
-}
-if(message.content === (prefix+"triste")){
+}else if(message.content === (prefix+"triste")){
   var philo = ["Le secret du bonheur en amour, ce n'est pas d'être aveugle mais de savoir fermer les yeux quand il le faut.","Le bonheur ne s'acquiert pas, il ne réside pas dans les apparences, chacun d'entre nous le construit à chaque instant de sa vie avec son coeur.","Si la vertu ne suffit pas à assurer le bonheur, la méchanceté suffit à rendre malheureux."];
   var triste = ["image/triste.gif","image/triste2.gif","image/triste3.gif"];
   var prandom = Math.floor(Math.random()*philo.length);
   message.channel.sendMessage(philo[prandom]);
   var random = Math.floor(Math.random()*triste.length);
   return message.channel.sendFile(triste[random]);
-}
-if(message.content === (prefix+"Fusion")){
+}else if(message.content === (prefix+"Fusion")){
   var mentionfu = message.mentions.users.first();
   if(mentionfu){
     message.channel.sendMessage("FU-SION-HA!");
     return message.channel.sendFile("image/fusion.gif");
   }
-}
-
-if(message.content === (prefix+"help")){
+}else if(message.content === (prefix+"help")){
   return message.channel.sendMessage("",{embed: {
     titre: "Commandes",
     color: 0xE46525,
