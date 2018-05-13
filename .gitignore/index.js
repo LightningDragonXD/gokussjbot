@@ -27,10 +27,6 @@ bot.on('message', function(message){
         message.reply("Merci, toi aussi !");
   }else if(message.content === (prefix+"botname")){
         bot.user.setUsername(message.substr(9)); 
-  }else if (message.content === (prefix +"say")){
-    message.delete(message.author);
-    var say = message.content.substr(5);
-    message.reply(say);
   }else if(message.content === (prefix+"XD")){
     var mentionxd = message.mentions.users.first();
     if(mentionxd){
