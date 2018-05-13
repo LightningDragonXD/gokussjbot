@@ -31,115 +31,12 @@ bot.on('message', function(message){
     message.delete(message.author);
     var say = message.content.substr(5);
     message.reply(say);
-}else if(message.content === (prefix+"XD")){
-  var mentionxd = message.mentions.users.first();
-  if(mentionxd){
-    var r = Math.floor(Math.random()*phrase.length);
-     return message.channel.sendMessage(phrase[r]);
-  }
-   
-}else if(message.content === (prefix+"like")){
-  var mentionlike = message.mentions.users.first();
-  if(mentionlike){
-    message.channel.sendMessage("Je t'aime bien, t'es sympas :smile:");
-    return message.channel.sendFile("image/pouce.gif");
-  }
-}else if(message.content === (prefix+"byebye")){
-  message.channel.sendMessage("Au revoir tout le monde ! :smile:");
-  return message.channel.sendFile("image/bye.gif");
-}else if(message.content === (prefix+"coup")){
-  var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
-  var mentionc = message.mentions.users.first();
-  if(mentionc){
-    var randomcoup = Math.floor(Math.random()*coup.length);
-    message.channel.sendMessage("Prend ça !");
-    return message.channel.sendFile(coup[randomcoup]);
-
-  }
-}else if(message.content === (prefix+"blood")){
-  var blood = ["image/sang.gif","image/sang1.gif"];
-  var mentionblood = message.mentions.users.first();
-  if(mentionblood){
-    message.channel.sendMessage("Je vais boire ton sang ! :3");
-    var randomblood = Math.floor(Math.random()*blood.length);
-    return message.channel.sendFile(blood[randomblood]);
-  }
-}else if(message.content === (prefix+"Kamehameha")){
-  var mentionc1 = message.mentions.users.first();
-  if(mentionc1){
-    message.channel.sendMessage("KAMEHAMEHAAAAAA !");
-    return message.channel.sendFile("image/kamehameha.gif");
-  }
-}else if(message.content === (prefix+"ichigoGT")){
-  var mentionc2 = message.mentions.users.first();
-  if(mentionc2){
-    message.channel.sendMessage("GETSUGA TENSHOOOO !");
-    return message.channel.sendFile("image/ichigo.gif");
-  }
-}else if(message.content === (prefix+"hug")){
-  var image = ["image/hug.gif","image/hug1.gif","image/hug3.gif","image/hug4.gif"];
-  var mentionc3 = message.mentions.users.first();
-  if(mentionc3){
-    message.channel.sendMessage("Gros calin :)!");
-    var r1 = Math.floor(Math.random()*image.length);
-    return message.channel.sendFile(image[r1]);
-  }
-}else if(message.content === (prefix+"colere")){
-  var colere = ["image/colere.gif","image/colere2.gif","image/colere3.gif","image/colere4.gif"];
-  var mentionc4 = message.mentions.users.first();
-  if(mentionc4){
-    message.channel.sendMessage("je vais te tuer !x)");
-    var randomc = Math.floor(Math.random()*colere.length);
-    return message.channel.sendFile(colere[randomc]);
-  }
-}else if(message.content === (prefix+"Gilbert")){
-  var mentionc3 = message.mentions.users.first();
-  if(mentionc3){
-    message.channel.sendMessage("GILBERT ON T'AIME !");
-    return message.channel.sendFile("image/gilbert1.gif"]);
-  }
-}else if(message.content === (prefix+"bouh")){
-  var mentionb = message.mentions.users.first();
-  if(mentionb){
-    message.channel.sendMessage("BOOUUUUUUUUUUUUUUUH :(");
-    return message.channel.sendFile("image/bouh.gif");
-  }
-}else if(message.content === (prefix+"black goku")){
-  var black = ["image/black.gif","image/black2.gif","image/black3.gif"];
-    message.channel.sendMessage("BADASS !");
-    var rand = Math.floor(Math.random()*black.length);
-    return message.channel.sendFile(black[rand]);
-  
-}else if(message.content === (prefix+"kiss")){
-  var kiss = ["image/sao.gif","image/kiss.gif","image/kiss1.gif"];
-  var mentionc3 = message.mentions.users.first();
-  if(mentionc3){
-    message.channel.sendMessage("bisouuuuuuu :*!");
-    var r2 = Math.floor(Math.random()*kiss.length);
-    return message.channel.sendFile(kiss[r2]);
-  }
-}else if(message.content === (prefix+"triste")){
-  var philo = ["Le secret du bonheur en amour, ce n'est pas d'être aveugle mais de savoir fermer les yeux quand il le faut.","Le bonheur ne s'acquiert pas, il ne réside pas dans les apparences, chacun d'entre nous le construit à chaque instant de sa vie avec son coeur.","Si la vertu ne suffit pas à assurer le bonheur, la méchanceté suffit à rendre malheureux."];
-  var triste = ["image/triste.gif","image/triste2.gif","image/triste3.gif"];
-  var prandom = Math.floor(Math.random()*philo.length);
-  message.channel.sendMessage(philo[prandom]);
-  var random = Math.floor(Math.random()*triste.length);
-  return message.channel.sendFile(triste[random]);
-}else if(message.content === (prefix+"Fusion")){
-  var mentionfu = message.mentions.users.first();
-  if(mentionfu){
-    message.channel.sendMessage("FU-SION-HA!");
-    return message.channel.sendFile("image/fusion.gif");
-  }
-}else if(message.content === (prefix+"help")){
-  return message.channel.sendMessage("",{embed: {
-    titre: "Commandes",
-    color: 0xE46525,
-    description: "Afficher des infos: !info (pseudo)\nAjouter des musiques: !add (titre de musique)\nLancer/Arrêter la musique: !play/!stop\nCâlin: !hug pseudo\nBisou: !kiss pseudo\nCoup de poing: !coup pseudo\nKamehameha: !Kamehameha pseudo\nAppeler Gilbert Montagné: !Gilbert pseudo\nIchigo: !ichigoGT pseudo\nLa météo: !méteo Lieu\nRecherche Youtube: !youtube nom\nRecherche Wikipédia: !wiki recherche\nMute: !mute pseudo\nKick: !kick pseudo\nBan: !ban pseudo\nHuer une personne: !bouh pseudo\nPlaisanter sur quelqu'un: !XD pseudo\nDire aurevoir: !byebye\nDire bonjour: !bonjour\nPleurer: !triste\nAppeler Black Goku: !black goku\nFusionner: !Fusion pseudo\nEffacer les messages: !clear nombreMsgASuppr\nEn colère: !colere pseudo\nDire que quelqu'un est sympas: !like pseudo",
-    footer:{
-      text: "Message par Goku"
+  }else if(message.content === (prefix+"XD")){
+    var mentionxd = message.mentions.users.first();
+    if(mentionxd){
+      var r = Math.floor(Math.random()*phrase.length);
+      return message.channel.sendMessage(phrase[r]);
     }
-    }});
-}
+  }
 });
 bot.login(process.env.TOKEN);
