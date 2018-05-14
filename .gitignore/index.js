@@ -10,9 +10,8 @@ var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip 
 bot.on('message', message =>{
   const msg = message.content;
   if(msg === (prefix+"help")){
-       message.channel.send(
-       {embed: {
-            Color: blue,
+       message.channel.send({embed: {
+            color: blue,
             author: {
                 name: bot.user.username,
                 icon_url: bot.user.avartarURL
@@ -35,8 +34,7 @@ bot.on('message', message =>{
                 icon_url: bot.user.avatarURL,
                 text: "Créer par Goku"
             }
-       } 
-       });      
+       }});      
   }
    if(msg === (prefix+"bonjour")){
       message.reply("Bonjour à toi");
