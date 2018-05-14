@@ -14,6 +14,7 @@ bot.on('message', message =>{
             .setDescription("Liste de commandes du Bot Goku")    
             .addField("Prefix des commandes", prefix)
             .addField("Help", "*help: Donne la liste des commandes*")
+            .addField("Discussion avec Goku", "bonjour","ça va")
             .setColor("#0188FE")
         message.channel.sendEmbed(embed);                
   }
@@ -50,6 +51,12 @@ bot.on('message', message =>{
       return message.channel.sendMessage(phrase[r]);
     }
   }
-  
+
 });
+  bot.on('guildMemeberAdd', member =>{
+    member.createDM().then(function(channel){
+        return channel.send("Bienvenue dans le monde du Japon, Amuse-toi bien avec nous à découvrir ce monde. :blush:")
+    })
+  });
+
 bot.login(process.env.TOKEN);
