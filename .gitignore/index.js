@@ -59,7 +59,7 @@ bot.on('message', message =>{
           .addField(echo, "Veuillez répondre par :heavy_check_mark: ou :x:.")
           .setColor("#0188FE")
           .setTimestamp()
-        message.guild.channels.finds("name","commande-bot").sendEmbed(embed)
+        message.channel.sendEmbed(embed)
         .then(function(message){
             message.react(":heavy_check_mark:")
             message.react(":x:")
