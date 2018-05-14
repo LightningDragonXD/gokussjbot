@@ -10,14 +10,14 @@ var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip 
 bot.on('message', message =>{
   const msg = message.content;
   if(msg === (prefix+"help")){
-       var embed = new Discord.RichEmbed()
-            .setTitle("Help")
+       var embed = new Discord.RichEmbed();
+            embed.setTitle("Help")
             .setDescription("Liste des commandes de Goku")
             .setaddField("Prefix","<G>")
             .setaddField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
-            .setFooter("Créer par Goku","https://imgur.com/a/gqLOFzz")     
+            .setFooter('Créer par Goku','https://imgur.com/a/gqLOFzz')     
             .setColor("#0155FE")
-            .setTimestamp();
+            .setTimestramp();
        message.channel.sendEmbed(embed);
   }
    if(msg === (prefix+"bonjour")){
