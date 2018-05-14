@@ -10,31 +10,14 @@ var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip 
 bot.on('message', message =>{
   const msg = message.content;
   if(msg === (prefix+"help")){
-       message.channel.send({embed: {
-            color: blue,
-            author: {
-                name: bot.user.username,
-                icon_url: bot.user.avartarURL
-            },
-            title: 'Help',
-            description: 'Liste des commandes de Goku !',
-            fields: [{
-                name: 'Prefix',
-                value: '<G>'
-            },{
-                name: 'Help',
-                value: 'help: Donne les commandes de Goku'
-            },{
-                name: 'Discuter avec Goku',
-                value: "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'"
-            
-            }],
-            timestamp: new Date(),
-            footer: {
-                icon_url: bot.user.avatarURL,
-                text: "Créer par Goku"
-            }
-       }});      
+       var embed = new Discord.RichEmbed()
+            .setTitle("Help")
+            .setDescription("Liste des commandes de Goku")
+            .setaddField("Prefix","<G>")
+            .setaddField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
+            .setColor(Color.blue)
+            .setFooter("Créer par Goku","image/Sangoku_Finish1.png")
+       message.channel.sendEmbed(embed)
   }
    if(msg === (prefix+"bonjour")){
       message.reply("Bonjour à toi");
