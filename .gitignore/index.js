@@ -14,7 +14,6 @@ bot.on('message', message =>{
             .setDescription("Liste de commandes du Bot Goku")    
             .addField("Prefix des commandes", prefix)
             .addField("Help", "*help: Donne la liste des commandes*")
-            .setFooter("Créer par "+user.getName(),user.getAvatarUrl()+"?=256")
             .setColor("#0188FE")
         message.channel.sendEmbed(embed);                
   }
