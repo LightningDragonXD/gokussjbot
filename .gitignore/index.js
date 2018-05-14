@@ -5,6 +5,7 @@ const prefix = "&";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, &help");
 });
+var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
 var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
 var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip tu as un pc en carton :p","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentille et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
 function sendError(message, description){
@@ -70,10 +71,9 @@ bot.on('message', message => {
         sendError(message,"Erreur, problèmes dans les paramètres.");
     }
     //jeux de mots
-   var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
    if(splitM[0] === 're' || splitM[0] === 'Re'){
      var r = Math.floor(Math.random()*re.length);
-     message.channel.sendMessage(re[r]);
+     return message.channel.sendMessage(re[r]);
    }
 }
 
