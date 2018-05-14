@@ -46,7 +46,8 @@ bot.on('message', message =>{
         bot.user.setUsername(message.substr(9)); 
   }
   if(msg === (prefix+"XD")){
-    if(message.guild.member(message.mentions.users.first())){ 
+    let membre = message.guild.member(message.mentions.users.first())
+    if(membre){ 
     var r = Math.floor(Math.random()*phrase.length);
       return message.channel.sendMessage(phrase[r]);
     }
