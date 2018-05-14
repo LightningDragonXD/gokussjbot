@@ -11,7 +11,7 @@ bot.on('message', message =>{
   const msg = message.content;
   if(msg === (prefix+"help")){
         var embed = new Discord.RichEmbed()
-            .setDescription("Liste de commandes du Bot Goku)    
+            .setDescription("Liste de commandes du Bot Goku")    
             .addField("Prefix des commandes", prefix)
             .addField("Help", prefix+"help: Donne la liste des commandes")
         message.channel.sendEmbed(embed);                
