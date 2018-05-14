@@ -32,6 +32,7 @@ bot.on('message', message => {
     }else{
         sendError(message,"Erreur, problèmes dans les paramètres.");
     }
+  }
   if(splitM[0] === (prefix+'bonjour')){
       message.reply("Bonjour à toi");
         var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
