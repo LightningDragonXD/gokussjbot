@@ -50,5 +50,24 @@ bot.on('message', message =>{
       return message.channel.sendMessage(phrase[r]);
     }
   }
+  if(msg.startsWith(prefix+"sondage"){
+     if(message.authors.is == "265885051999354881"){
+        let args = message.content.split(" ").slice(1);
+        let echo = args.join(" ");
+        var embed = Discord.RichEmebed()
+          .setDescription("Sondage")
+          .addField(echo, "Veuillez répondre par :heavy_check_mark: ou :x:.")
+          .setColor("#0188FE")
+          .setTimestamp()
+        message.guild.channels.finds("name","sondage").sendEmbed(embed)
+        .then(function(message){
+            message.react(":heavy_check_mark:")
+            message.react(":x:")
+        }).catch(function(){
+        });
+    }else{
+      return message.reply("Tu n'as pas la permission)
+    }
+  }
 });
 bot.login(process.env.TOKEN);
