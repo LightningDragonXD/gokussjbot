@@ -17,7 +17,7 @@ bot.on('message', message =>{
             .setaddField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
             .setColor(Color.blue)
             .setFooter("Créer par Goku","image/Sangoku_Finish1.png")
-       message.channel.sendEmbed(embed)
+       message.channel.sendEmbed(embed);
   }
    if(msg === (prefix+"bonjour")){
       message.reply("Bonjour à toi");
