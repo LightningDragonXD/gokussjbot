@@ -66,14 +66,16 @@ bot.on('message', message => {
       if(membre){ 
         var r = Math.floor(Math.random()*phrase.length);
           return message.channel.sendMessage(phrase[r]);
+      }else if(membre === mention){
+        message.reply("Arrête de te moquer de moi. :cry:");
       }
     }else{
       sendError(message,"Erreur, problèmes de mentions");
     }
-  }/*else if(splitM[0] === 're' || splitM[0] === 'Re'){
+  }else if(splitM[0] === 're' || splitM[0] === 'Re'){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
-   }*/
+   }
 }
 
 });
