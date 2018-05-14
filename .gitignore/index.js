@@ -15,7 +15,7 @@ bot.on('message', message =>{
             Color: blue,
             author: {
                 name: bot.user.username,
-                icon_url: bot.user.avartarUrl
+                icon_url: bot.user.avartarURL
             },
             title: 'Help',
             description: 'Liste des commandes de Goku !',
@@ -32,7 +32,7 @@ bot.on('message', message =>{
             }],
             timestamp: new Date(),
             footer: {
-                icon_url: bot.user.avatarUrl,
+                icon_url: bot.user.avatarURL,
                 text: "Créer par Goku"
             }
        } 
