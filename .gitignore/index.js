@@ -66,7 +66,7 @@ bot.on('message', message =>{
         }).catch(function(){
         });
     }else{
-      return message.reply("Tu n'as pas la permission)
+      return message.reply("Tu n'as pas la permission")
     }
   }
 });
