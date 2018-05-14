@@ -50,7 +50,7 @@ bot.on('message', message =>{
       return message.channel.sendMessage(phrase[r]);
     }
   }
-  if(msg.startsWith(prefix+"sondage"){
+  if(msg.startsWith(prefix+"sondage")){
      if(message.authors.is == "265885051999354881"){
         let args = message.content.split(" ").slice(1);
         let echo = args.join(" ")
