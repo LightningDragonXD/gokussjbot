@@ -14,8 +14,8 @@ bot.on('message', message =>{
             .setDescription("Liste de commandes du Bot Goku")    
             .addField("Prefix des commandes", prefix)
             .addField("Help", "*help: Donne la liste des commandes*")
+            .setFooter("Créer par "+user.getName(),user.getAvatarUrl()+"?=256")
             .setColor("#0188FE")
-            .setFooter("Créer par Goku"+user.getAvatarUrl()+"?=256")
         message.channel.sendEmbed(embed);                
   }
    if(msg === (prefix+"bonjour")){
