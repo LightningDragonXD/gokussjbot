@@ -18,7 +18,20 @@ function sendError(message, description){
 bot.on('message', message => {
   if(message.content[0] === prefix){
   let splitM = message.content.split(" ");
-  
+  if(splitM[0] === (prefix+'help')){
+    if(splitM.length === 1){
+       var embed = new Discord.RichEmbed();
+            embed.setTitle('Help')
+            .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+            .setDescription('Liste des commandes de Goku')
+            .addField('Prefix', '&')
+            .addField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setColor("#0155FE")
+       message.channel.sendEmbed(embed);
+    }else{
+        sendError(message,"Erreur, problèmes dans les paramètres.");
+    }
   if(splitM[0] === (prefix+'bonjour')){
       message.reply("Bonjour à toi");
         var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
@@ -56,25 +69,10 @@ bot.on('message', message => {
     }else{
       sendError(message,"Erreur, problèmes de mentions");
     }
-  }else if(splitM[0] === (prefix+'help')){
-    if(splitM.length === 1){
-       var embed = new Discord.RichEmbed();
-            embed.setTitle('Help')
-            .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-            .setDescription('Liste des commandes de Goku')
-            .addField('Prefix', '&')
-            .addField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setColor("#0155FE")
-       message.channel.sendEmbed(embed);
-    }else{
-        sendError(message,"Erreur, problèmes dans les paramètres.");
-    }
-    //jeux de mots
-   if(splitM[0] === 're' || splitM[0] === 'Re'){
+  }/*else if(splitM[0] === 're' || splitM[0] === 'Re'){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
-   }
+   }*/
 }
 
 });
