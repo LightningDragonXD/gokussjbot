@@ -10,7 +10,11 @@ var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip 
 bot.on('message', message =>{
   const msg = message.content;
   if(msg === (prefix+"help")){
-        message.channel.sendMessage("Voici la liste des commandes:\n   <G>help: Donne la liste des commandes.");
+        var embed = new Discord.RichEmbed()
+            .setDescription("Liste de commandes du Bot Goku)    
+            .addField("Prefix des commandes", prefix)
+            .addField("Help", prefix+"help: Donne la liste des commandes")
+        message.channel.sendEmbed(embed);                
   }
    if(msg === (prefix+"bonjour")){
       message.reply("Bonjour à toi");
