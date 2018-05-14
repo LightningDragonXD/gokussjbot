@@ -28,7 +28,7 @@ bot.on('message', function(message){
   }else if(message.content === (prefix+"botname")){
         bot.user.setUsername(message.substr(9)); 
   }else if(message.content === (prefix+"XD")){
-    if(message.mentions.users.first()){ 
+    if(message.content.mentions.users.first()){ 
     var r = Math.floor(Math.random()*phrase.length);
       return message.channel.sendMessage(phrase[r]);
     }
