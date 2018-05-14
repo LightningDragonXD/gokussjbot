@@ -53,7 +53,7 @@ bot.on('message', message =>{
   if(msg.startsWith(prefix+"sondage"){
      if(message.authors.is == "265885051999354881"){
         let args = message.content.split(" ").slice(1);
-        let echo = args.join(" ");
+        let echo = args.join(" ")
         var embed = Discord.RichEmebed()
           .setDescription("Sondage")
           .addField(echo, "Veuillez répondre par :heavy_check_mark: ou :x:.")
