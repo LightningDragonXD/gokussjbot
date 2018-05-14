@@ -74,6 +74,7 @@ bot.on('message', message => {
    if(splitM[0] === 're' || splitM[0] === 'Re'){
      var r = Math.floor(Math.random()*re.length);
      message.channel.sendMessage(re[r]);
+   }
 }
 
 });
