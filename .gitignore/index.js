@@ -15,6 +15,7 @@ bot.on('message', message =>{
             .addField("Prefix des commandes", prefix)
             .addField("Help", "*help: Donne la liste des commandes*")
             .setColor("#0188FE")
+            .setFooter("Créer par Goku"+user.getAvatarUrl()+"?=256")
         message.channel.sendEmbed(embed);                
   }
    if(msg === (prefix+"bonjour")){
@@ -50,24 +51,6 @@ bot.on('message', message =>{
       return message.channel.sendMessage(phrase[r]);
     }
   }
-  if(msg.startsWith(prefix+"sondage")){
-     if(message.authors.is == "445636160253853706"){
-        let args = message.content.split(" ").slice(1);
-        let echo = args.join(" ")
-        var embed = Discord.RichEmebed()
-          .setDescription("Sondage")
-          .addField(echo, "Veuillez répondre par :heavy_check_mark: ou :x:.")
-          .setColor("#0188FE")
-          .setTimestamp()
-        message.guild.channels.find("name","commande-bot").sendEmbed(embed)
-        .then(function(message){
-            message.react(":heavy_check_mark:")
-            message.react(":x:")
-        }).catch(function(){
-        });
-    }else{
-      return message.reply("Tu n'as pas la permission")
-    }
-  }
+  
 });
 bot.login(process.env.TOKEN);
