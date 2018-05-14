@@ -53,10 +53,14 @@ bot.on('message', message =>{
   }
 
 });
-  bot.on('guildMemeberAdd', member =>{
+  bot.on('guildMemberAdd', member =>{
     member.createDM().then(function(channel){
         return channel.send("Bienvenue dans le monde du Japon, Amuse-toi bien avec nous à découvrir ce monde. :blush:")
     })
   });
-
+  bot.on('guildMemberRemove', member =>{
+    member.createDM().then(function(channel){
+        return channel.send("Au revoir, nous espérons te revoir bientôt dans ce monde merveilleux qui est le Japon. :blush:")
+    })
+});
 bot.login(process.env.TOKEN);
