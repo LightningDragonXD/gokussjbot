@@ -7,28 +7,40 @@ bot.on('ready', function(){
 });
 var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
 var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip tu as un pc en carton :p","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentille et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
-bot.on('message', function(message){
-   if(message.content === (prefix+"bonjour")){
+bot.on('message', message =>{
+  const msg = message.content;
+  if(msg === (prefix+"help")){
+        message.channel.sendMessage("Voici la liste des commandes:\n   <G>help: Donne la liste des commandes.");
+  }
+   if(msg === (prefix+"bonjour")){
       message.reply("Bonjour à toi");
         var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
         var randomr = Math.floor(Math.random()*reveille.length);
         return message.channel.sendFile(reveille[randomr]);
-   }else if(message.content === (prefix+"ça va")){
+   }
+  if(msg === (prefix+"ça va")){
         message.reply("Oui et toi ?");
-   }else if(message.content === (prefix+"oui")){
+   }
+  if(msg === (prefix+"oui")){
         message.reply("Tant mieux :blush:");
-   }else if(message.content === (prefix+"tu fais quoi ?")){
+   }
+  if(msg === (prefix+"tu fais quoi ?")){
         message.reply("J'emmerde les gens :smile: et toi ?");
-   }else if(message.content === (prefix+rep[0]) || message.content === (prefix+rep[1]) || message.content === (prefix+rep[2]) || message.content === (prefix+rep[3])){
+   }
+  if(msg === (prefix+rep[0]) || msg === (prefix+rep[1]) || msg === (prefix+rep[2]) || msg === (prefix+rep[3])){
         message.reply("Cool :blush:");
-   }else if(message.content === (prefix+"rien")){
+   }
+  if(msg === (prefix+"rien")){
         message.reply("Attends, j'arrive !");
-   }else if(message.content === (prefix+"amuse toi bien =3")){
+   }
+  if(msg === (prefix+"amuse toi bien =3")){
         message.reply("Merci, toi aussi !");
-  }else if(message.content === (prefix+"botname")){
+  }
+  if(msg === (prefix+"botname")){
         bot.user.setUsername(message.substr(9)); 
-  }else if(message.content === (prefix+"XD")){
-    if(message.content.mentions.users.first()){ 
+  }
+  if(msg === (prefix+"XD")){
+    if(message.mentions.users.first()){ 
     var r = Math.floor(Math.random()*phrase.length);
       return message.channel.sendMessage(phrase[r]);
     }
