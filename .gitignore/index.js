@@ -13,7 +13,7 @@ bot.on('message', message =>{
         var embed = new Discord.RichEmbed()
             .setDescription("Liste de commandes du Bot Goku")    
             .addField("Prefix des commandes", prefix)
-            .addField("Help", "'''"+prefix+"help: Donne la liste des commandes'''")
+            .addField("Help", "'''help: Donne la liste des commandes'''")
             .setColor("#0188FE")
         message.channel.sendEmbed(embed);                
   }
