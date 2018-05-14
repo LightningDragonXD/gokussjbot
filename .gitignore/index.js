@@ -9,15 +9,15 @@ var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"]
 var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip tu as un pc en carton :p","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentille et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
 function sendError(message, description){
    var embed = new Discord.RichEmbed()
-            .setColor('#FE0000')
+            .setColor("#FE0000")
             .setDescription(':x: '+ description)
-  message.channel.send(embed);
+  message.channel.sendEmbed(embed);
 }
 
 bot.on('message', message =>{
   if(message.content[0] === prefix){
   let splitM = message.content.split(" ");
-  if(splitM[0] === (prefix+"help")){
+  if(splitM[0] === "<G>help"){
     if(splitM.length === 1){
        var embed = new Discord.RichEmbed();
             embed.setTitle('Help')
@@ -32,7 +32,7 @@ bot.on('message', message =>{
         sendError(message,"Erreur, problèmes dans les paramètres.");
     }
   }
-   if(splitM[0] === (prefix+"bonjour")){
+   if(splitM[0] === "<G>bonjour"){
       message.reply("Bonjour à toi");
         var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
         var randomr = Math.floor(Math.random()*reveille.length);
