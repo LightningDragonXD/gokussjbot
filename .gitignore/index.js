@@ -46,7 +46,7 @@ bot.on('message', message => {
         bot.user.setUsername(message.substr(9)); 
   }
   if(splitM[0] === (prefix+"XD")){
-    if(splitM[0].length === 2){
+    if(splitM.length === 2){
     let membre = message.guild.member(message.mentions.users.first())
       if(membre){ 
         var r = Math.floor(Math.random()*phrase.length);
@@ -71,7 +71,7 @@ bot.on('message', message => {
     }
     //jeux de mots
    var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
-   if(message.content === 're' || message.content === 'Re'){
+   if(splitM[0] === 're' || splitM[0] === 'Re'){
      var r = Math.floor(Math.random()*re.length);
      message.channel.sendMessage(re[r]);
 }
