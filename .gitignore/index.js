@@ -12,12 +12,12 @@ bot.on('message', message =>{
   if(msg === (prefix+"help")){
        var embed = new Discord.RichEmbed();
             embed.setTitle("Help")
+            .setAuthor('https://imgur.com/a/gqLOFzz')
             .setDescription("Liste des commandes de Goku")
             .setaddField("Prefix","<G>")
             .setaddField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
             .setFooter('Créer par Goku','https://imgur.com/a/gqLOFzz')     
             .setColor("#0155FE")
-            .setTimestramp();
        message.channel.sendEmbed(embed);
   }
    if(msg === (prefix+"bonjour")){
