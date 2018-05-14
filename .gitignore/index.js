@@ -9,7 +9,7 @@ var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"]
 var phrase = ["Tu suces ? MDR", "Tu pues du cul !","Tu es un trans ? XD","Askip tu as un pc en carton :p","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentille et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
 bot.on('message', message =>{
   let msg = message.content.split(" ")[0];
-  const args = message.content.splice(prefix.length).split(/ +/);
+  const args = message.content.splice(prefix.length).split("+");
   msg = args.shift().toLowerCase();
   if(msg(prefix+"help")){
         var embed = new Discord.RichEmbed()
