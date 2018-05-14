@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var mention = "<@401421641097412608>";
-var prefix = "<G>";
+const prefix = "<G>";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, <G>help");
 });
@@ -14,10 +14,10 @@ function sendError(message, description){
   message.channel.sendEmbed(embed);
 }
 
-bot.on('message', message =>{
+bot.on('message', message => {
   if(message.content[0] === prefix){
   let splitM = message.content.split(" ");
-  if(splitM[0] === "<G>help"){
+  if(splitM[0] === '<G>help'){
     if(splitM.length === 1){
        var embed = new Discord.RichEmbed();
             embed.setTitle('Help')
@@ -32,7 +32,7 @@ bot.on('message', message =>{
         sendError(message,"Erreur, problèmes dans les paramètres.");
     }
   }
-   if(splitM[0] === "<G>bonjour"){
+   if(splitM[0] === '<G>bonjour'){
       message.reply("Bonjour à toi");
         var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
         var randomr = Math.floor(Math.random()*reveille.length);
