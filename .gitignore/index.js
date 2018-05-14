@@ -15,7 +15,7 @@ bot.on('message', message =>{
             .setDescription("Liste des commandes de Goku")
             .setaddField("Prefix","<G>")
             .setaddField("Discuter avec Goku", "'bonjour', 'ça va', 'tu fais quoi ?', 'rien', 'je joue', 'je parle', 'j'écoute de la musique', 'je regarde un anime'")
-            .setColor(Color.blue)
+            .setColor("#0155FE")
             .setFooter("Créer par Goku","image/Sangoku_Finish1.png")
        message.channel.sendEmbed(embed);
   }
