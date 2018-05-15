@@ -75,7 +75,7 @@ bot.on('message', message => {
   }
   if(splitM[0] === (prefix+"punch")){
     if(splitM.length === 2){
-       let membre = message.guild.member (message.mentions.users.first());
+       let membre = message.guild.member(message.mentions.users.first());
        if(membre){
          return message.channel.sendMessage("PRENDS ÇA !");
        }
