@@ -62,11 +62,13 @@ bot.on('message', message => {
   }
   if(splitM[0] === (prefix+"XD")){
     if(splitM.length === 2){
-    let membre = message.guild.member(message.mentions.users.first())
-      if(membre){
+    let membre = message.guild.member(message.mentions.users.first());
+      if(membre == bot.users.get('401421641097412608')){
+        message.reply("Arrête de m'insulter :cry:");
+        }else if (membre){
         var r = Math.floor(Math.random()*phrase.length);
           return message.channel.sendMessage(phrase[r]);
-      
+      }
     }else {
       sendError(message,"Erreur, problèmes de mentions");
     }
