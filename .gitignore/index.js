@@ -90,6 +90,22 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
+    var calin = ["https://i.imgur.com/g5qHUlx.gif","https://i.imgur.com/EfobnJ4.gif","https://i.imgur.com/hZhO8vW.gif","https://i.imgur.com/OjmPBRj.gif"];
+  if(splitM[0] === (prefix+"hug")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*coup.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" fait un gros câlin à "+membre+" ! :flushed:")
+                .setImage(calin[r])
+                .setColor("#FE0166")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
   
 }
   //jeux de mots
