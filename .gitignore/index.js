@@ -72,7 +72,7 @@ bot.on('message', message => {
     }else{
       sendError(message,"Erreur, problèmes de mentions");
     }
-  }else if(splitM[0] === 're' || splitM[0] === 'Re'){
+  }else if(splitM[0] === "re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
    }
