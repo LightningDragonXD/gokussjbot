@@ -81,7 +81,7 @@ bot.on('message', message => {
          var r = Math.floor(Math.random()*r.length);
          var embed = new Discord.RichEmbed()
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-            .setDescription("**${user}**, donne un sacré coup de poing à "+membre+" ! :choqu:")
+            .setDescription("Michel, donne un sacré coup de poing à gilbert ! :choqu:")
             .setColor("#FE9901")
          message.channel.sendEmbed(embed);
        }
