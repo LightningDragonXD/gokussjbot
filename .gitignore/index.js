@@ -6,7 +6,6 @@ const prefix = "&";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, &help");
 });
-var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
 var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
 var phrase = ["Tu pues du cul !","Tu es un trans ? :joy:","Askip tu as un pc en carton :yum:","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentil(le) et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper pour longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
 function sendError(message, description){
@@ -63,6 +62,16 @@ bot.on('message', message => {
    }
   if(splitM[0] === (prefix+"rien")){
         message.reply("Attends, j'arrive !");
+        message.member.voiceChannel.join().then(connection =>{
+            dispatcher = connection.playStream("https://www.youtube.com/watch?v=dq6G2YWoRqA");
+            dispatcher.on('error', e =>{
+              console.log('e'); 
+            });
+            dispatcher.on('end', e =>{
+              dispatcher = undefined;
+              console.log('Fin du son.');
+            });
+        }).catch(console.log);
    }
   if(splitM[0] === (prefix+"amuse toi bien =3")){
         message.reply("Merci, toi aussi !");
@@ -149,11 +158,31 @@ bot.on('message', message => {
        dispatcher.resume();
      }
   }
+    if(split[0] === (prefix+"ban")){
+      if(splitM.length === 2){
+        message.guild.ban(message.guild.member(message.mentions.users.first()));
+      }else {
+          sendError(message,"Erreur, problèmes de mentions");
+      }
+    }
+    if(split[0] === (prefix+"kick")){
+      if(splitM.length === 2){
+        message.guild.kick(message.guild.member(message.mentions.users.first()));
+      }else {
+          sendError(message,"Erreur, problèmes de mentions");
+      }
+    }
 }
   //jeux de mots
+  var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
+  var ah = ["vril","vion","bois","ssis","llongé","ccroupi"];
 if(message.content === "re" || message.content === "Re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
+   }
+  if(message.content === "ah" || message.content === "Ah"){
+     var r = Math.floor(Math.random()*ah.length);
+     return message.channel.sendMessage(ah[r]);
    }
 });
   bot.on('guildMemberAdd', member =>{
