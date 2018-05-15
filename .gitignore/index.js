@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var mention = "<@401421641097412608>";
+var dispatcher;
 const prefix = "&";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, &help");
@@ -29,17 +30,24 @@ bot.on('message', message => {
             .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
             .addField("Commandes Fun", "`XD`, `hug`,`punch`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp() 
             .setColor("#0155FE")
        message.channel.sendEmbed(embed);
     }else{
         sendError(message,"Erreur, problèmes dans les paramètres.");
     }
   }
+  var reveille = ["https://i.imgur.com/6XWJUPl.gif","https://i.imgur.com/Khl3DLb.gif","https://i.imgur.com/H67C3jV.gif"];
   if(splitM[0] === (prefix+'bonjour')){
-      message.reply("Bonjour à toi");
-        var reveille = ["image/bonjour.gif","image/bonjour2.gif","image/bonjour3.gif"];
-        var randomr = Math.floor(Math.random()*reveille.length);
-        return message.channel.sendFile(reveille[randomr]);
+        var r = Math.floor(Math.random()*reveille.length);
+        var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.reply("Bonjour à toi :smile:"))
+                .setImage(reveille[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#6600FE")
+         message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+"ça va")){
         message.reply("Oui et toi ?");
@@ -83,6 +91,8 @@ bot.on('message', message => {
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
                 .setDescription(message.author.toString()+" donne un sacré coup de poing à "+membre+" ! :scream:")
                 .setImage(coup[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
                 .setColor("#FE9901")
             message.channel.sendEmbed(embed);
           }
@@ -95,19 +105,50 @@ bot.on('message', message => {
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
-            var r = Math.floor(Math.random()*coup.length);      
+            var r = Math.floor(Math.random()*calin.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
                 .setDescription(message.author.toString()+" fait un gros câlin à "+membre+" ! :flushed:")
                 .setImage(calin[r])
                 .setColor("#FE0166")
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
             message.channel.sendEmbed(embed);
           }
        }else {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-  
+  if(splitM[0] === (prefix+"play")){
+     if(splitM.length === 2){
+      if(message.member.voiceChannel){
+        message.member.voiceChannel.join().then(connection =>{
+            dispatcher = connection.playArbitraryInput(splitM[1]);
+            dispatcher.on('error', e =>{
+              console.log('e'); 
+            });
+            dispatcher.on('end', e =>{
+              dispatcher = undefined;
+              message.channel.sendMessage("Fin du son.");
+            });
+        }).catch(console.log);
+      }else{
+        sendError(message,"Erreur, vous devez d'abord vous téléporter à un salon.");
+      }
+     }else{
+       sendError(message,"Erreur, problèmes de mentions");
+     }
+  }
+    if(splitM[0] === (prefix+"pause")){
+     if(dispatcher !== undefined){
+       dispatcher.pause();
+     }
+  }
+   if(splitM[0] === (prefix+"resume")){
+     if(dispatcher !== undefined){
+       dispatcher.resume();
+     }
+  }
 }
   //jeux de mots
 if(message.content === "re" || message.content === "Re"){
