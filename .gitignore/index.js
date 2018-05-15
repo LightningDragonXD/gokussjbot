@@ -62,16 +62,6 @@ bot.on('message', message => {
    }
   if(splitM[0] === (prefix+"rien")){
         message.reply("Attends, j'arrive !");
-        message.member.voiceChannel.join().then(connection =>{
-            dispatcher = connection.playStream("https://www.youtube.com/watch?v=dq6G2YWoRqA");
-            dispatcher.on('error', e =>{
-              console.log('e'); 
-            });
-            dispatcher.on('end', e =>{
-              dispatcher = undefined;
-              console.log('Fin du son.');
-            });
-        }).catch(console.log);
    }
   if(splitM[0] === (prefix+"amuse toi bien =3")){
         message.reply("Merci, toi aussi !");
@@ -132,7 +122,7 @@ bot.on('message', message => {
      if(splitM.length === 2){
       if(message.member.voiceChannel){
         message.member.voiceChannel.join().then(connection =>{
-            dispatcher = connection.playArbitraryInput(splitM[1]);
+            dispatcher = connection.playBroadcast(splitM[1]);
             dispatcher.on('error', e =>{
               console.log('e'); 
             });
