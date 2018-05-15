@@ -8,6 +8,7 @@ bot.on('ready', function(){
 var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
 var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
 var phrase = ["Tu pues du cul !","Tu es un trans ? :joy:","Askip tu as un pc en carton :yum:","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentil(le) et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper pour longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
+var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
 function sendError(message, description){
    var embed = new Discord.RichEmbed()
             .setColor("#FE0000")
@@ -77,13 +78,17 @@ bot.on('message', message => {
     if(splitM.length === 2){
        let membre = message.guild.member(message.mentions.users.first());
        if(membre){
-         var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
          var r = Math.floor(Math.random()*r.length);
          var embed = new Discord.RichEmbed();
-            embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-            .setDescription("Michel, donne un sacré coup de poing à gilbert ! :choqu:")
-            .setColor("#FE9901")
-         message.channel.sendEmbed(embed);
+            embed.setTitle('Help')
+            .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+            .setDescription('Liste des commandes de Goku')
+            .addField('Prefix', '&')
+            .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
+            .addField("Commandes Fun", "`XD`, `hug`,`punch`")
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setColor("#0155FE")
+       message.channel.sendEmbed(embed);
        }
     }else {
        sendError(message, "Erreur, problèmes de mentions.");
