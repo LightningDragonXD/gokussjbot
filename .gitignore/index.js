@@ -79,9 +79,9 @@ bot.on('message', message => {
        let membre = message.guild.member(message.mentions.users.first());
        if(membre){
          var r = Math.floor(Math.random()*r.length);
-         var embed = DiscordRichEmbed()
+         var embed = new DiscordRichEmbed()
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-            .setDescription('**{user}**, donne un sacré coup de poing à **' + membre + '** ! :choqu:')
+            .setDescription("**{user}**, donne un sacré coup de poing à **" + membre + "** ! :choqu:")
             .setColor("#FE9901")
          message.channel.sendEmbed(embed);
        }
