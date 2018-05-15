@@ -78,7 +78,7 @@ bot.on('message', message => {
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
-            var r = Math.floor(Math.random()*r.length);      
+            var r = Math.floor(Math.random()*coup.length);      
             message.channel.sendMessage("michel te donne un sacré coup de poing !");
             return message.channel.sendFile(coup[r]);
           }
