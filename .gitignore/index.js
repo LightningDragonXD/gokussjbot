@@ -129,7 +129,7 @@ bot.on('message', message => {
             });
             dispatcher.on('end', e =>{
               dispatcher = undefined;
-              message.channel.sendMessage("Fin du son.");
+              console.log('Fin du son.');
             });
         }).catch(console.log);
       }else{
