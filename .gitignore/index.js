@@ -123,7 +123,7 @@ bot.on('message', message => {
      if(splitM.length === 2){
       if(message.member.voiceChannel){
         message.member.voiceChannel.join().then(connection =>{
-            dispatcher = connection.play(ytdl(splitM[1]));
+            dispatcher = connection.playArbitraryInput(splitM[1]);
             dispatcher.on('error', e =>{
               console.log('e'); 
             });
