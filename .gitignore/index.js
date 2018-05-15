@@ -8,7 +8,6 @@ bot.on('ready', function(){
 var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
 var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
 var phrase = ["Tu pues du cul !","Tu es un trans ? :joy:","Askip tu as un pc en carton :yum:","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentil(le) et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper pour longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
-var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
 function sendError(message, description){
    var embed = new Discord.RichEmbed()
             .setColor("#FE0000")
@@ -75,12 +74,13 @@ bot.on('message', message => {
     }
   }
   if(splitM[0] === (prefix+"punch")){
+    var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
        if(splitM.length === 2){
           const membre = message.guild.member(message.mentions.users.first());
           if(membre){
             var r = Math.floor(Math.random()*r.length);      
             message.channel.sendMessage("**${user}** te donne un sacré coup de poing ! :choqu:");
-            message.channel.sendFile(coup[r]);
+            return message.channel.sendFile(coup[r]);
           }
        }else {
           sendError(message,"Erreur, problèmes de mentions");
