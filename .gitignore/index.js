@@ -73,7 +73,7 @@ bot.on('message', message => {
       sendError(message,"Erreur, problèmes de mentions");
     }
   }
-  var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
+  var coup = ["https://i.imgur.com/A5WGQI3.gif","https://i.imgur.com/rak3nEw.gif","https://i.imgur.com/0h9LpJm.gif"];
   if(splitM[0] === (prefix+"punch")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
@@ -81,8 +81,8 @@ bot.on('message', message => {
             var r = Math.floor(Math.random()*coup.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .setDescription(message.author.toString()+" donne un sacré coup de poing à "+membre+" ! :choqu:")
-                .setImage('https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" donne un sacré coup de poing à "+membre+" ! :scream:")
+                .setImage(coup[r])
                 .setColor("#FE9901")
             message.channel.sendEmbed(embed);
           }
