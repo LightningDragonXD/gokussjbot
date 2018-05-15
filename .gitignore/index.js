@@ -79,8 +79,8 @@ bot.on('message', message => {
        if(membre){
          var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
          var r = Math.floor(Math.random()*r.length);
-         var embed = new Discord.RichEmbed()
-            .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+         var embed = new Discord.RichEmbed();
+            embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
             .setDescription("Michel, donne un sacré coup de poing à gilbert ! :choqu:")
             .setColor("#FE9901")
          message.channel.sendEmbed(embed);
