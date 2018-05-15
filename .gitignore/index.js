@@ -78,7 +78,7 @@ bot.on('message', message => {
     if(splitM.length === 2){
        let membre = message.guild.member(message.mentions.users.first());
        if(membre){
-         var r = Math.floor(Math.random()*r.length);
+        // var r = Math.floor(Math.random()*r.length);
          var embed = new Discord.RichEmbed();
             embed.setTitle('Help')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
@@ -88,8 +88,9 @@ bot.on('message', message => {
             .addField("Commandes Fun", "`XD`, `hug`,`punch`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setColor("#0155FE")
-       message.channel.sendEmbed(embed);
-       }
+         message.channel.sendEmbed(embed);
+       }else {
+         return message.reply("marche pas");
     }else {
        sendError(message, "Erreur, problèmes de mentions.");
     }
