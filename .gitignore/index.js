@@ -106,6 +106,7 @@ bot.on('message', message => {
        }else {
           sendError(message,"Erreur, problèmes de mentions");
        }
+  }
   
 }
   //jeux de mots
