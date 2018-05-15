@@ -75,26 +75,12 @@ bot.on('message', message => {
     }
   }
   if(splitM[0] === (prefix+"punch")){
-    if(splitM.length === 2){
-       let membre = message.guild.member(message.mentions.users.first());
-       if(membre){
-        // var r = Math.floor(Math.random()*r.length);
-         var embed = new Discord.RichEmbed();
-            embed.setTitle('Help')
-            .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-            .setDescription('Liste des commandes de Goku')
-            .addField('Prefix', '&')
-            .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
-            .addField("Commandes Fun", "`XD`, `hug`,`punch`")
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setColor("#0155FE")
-         message.channel.sendEmbed(embed);
-       }else {
-         return message.reply("marche pas");
-    }else {
-       sendError(message, "Erreur, problèmes de mentions.");
-    }
-  }
+       if(message.mentions.members.size == 0)sendError(message,"Veuillez mentionner une personne.");
+       const membre = message.mentions.users.first();
+       var r = Math.floor(Math.random()*r.length);      
+       message.channel.sendMessage("**${user}** te donne un sacré coup de poing ! :choqu:");
+       message.channel.sendFile(coup[r]);
+  
 }
   //jeux de mots
 if(message.content === "re" || message.content === "Re"){
