@@ -119,36 +119,7 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-  if(splitM[0] === (prefix+"play")){
-     if(splitM.length === 2){
-      if(message.member.voiceChannel){
-        message.member.voiceChannel.join().then(connection =>{
-            dispatcher = connection.playArbitraryInput(splitM[1]);
-            dispatcher.on('error', e =>{
-              console.log('e'); 
-            });
-            dispatcher.on('end', e =>{
-              dispatcher = undefined;
-              console.log('Fin du son.');
-            });
-        }).catch(console.log);
-      }else{
-        sendError(message,"Erreur, vous devez d'abord vous téléporter à un salon.");
-      }
-     }else{
-       sendError(message,"Erreur, problèmes de mentions");
-     }
-  }
-    if(splitM[0] === (prefix+"pause")){
-     if(dispatcher !== undefined){
-       dispatcher.pause();
-     }
-  }
-   if(splitM[0] === (prefix+"resume")){
-     if(dispatcher !== undefined){
-       dispatcher.resume();
-     }
-  }
+  
     if(split[0] === (prefix+"ban")){
       if(splitM.length === 2){
         message.guild.ban(message.guild.member(message.mentions.users.first()));
