@@ -79,8 +79,12 @@ bot.on('message', message => {
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
             var r = Math.floor(Math.random()*coup.length);      
-            message.channel.sendMessage(message.author.toString()+"donne un sacré coup de poing à "+membre+"!");
-            return message.channel.sendFile(coup[r]);
+            var embed = new Discord.RichEmbed()
+                .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+"donne un sacré coup de poing à "+membre+" ! :choqu:")
+                .setImage(coup[r])
+                .setColor("#FE9901")
+            message.channel.sendEmbed(embed);
           }
        }else {
           sendError(message,"Erreur, problèmes de mentions");
