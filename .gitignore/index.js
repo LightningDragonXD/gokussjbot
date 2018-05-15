@@ -73,11 +73,11 @@ bot.on('message', message => {
       sendError(message,"Erreur, problèmes de mentions");
     }
   }
-  var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
   if(splitM[0] === (prefix+"punch")){
     if(splitM.length === 2){
        let membre = message.guild.member(message.mentions.users.first());
        if(membre){
+         var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
          var r = Math.floor(Math.random()*r.length);
          var embed = new Discord.RichEmbed()
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
