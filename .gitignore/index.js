@@ -120,14 +120,14 @@ bot.on('message', message => {
        }
   }
   
-    if(split[0] === (prefix+"ban")){
+    if(splitM[0] === (prefix+"ban")){
       if(splitM.length === 2){
         message.guild.ban(message.guild.member(message.mentions.users.first()));
       }else {
           sendError(message,"Erreur, problèmes de mentions");
       }
     }
-    if(split[0] === (prefix+"kick")){
+    if(splitM[0] === (prefix+"kick")){
       if(splitM.length === 2){
         message.guild.kick(message.guild.member(message.mentions.users.first()));
       }else {
