@@ -16,6 +16,7 @@ function sendError(message, description){
 }
 
 bot.on('message', message => {
+  //commandes
   if(message.content[0] === prefix){
   let splitM = message.content.split(" ");
   if(splitM[0] === (prefix+'help')){
@@ -26,7 +27,7 @@ bot.on('message', message => {
             .setDescription('Liste des commandes de Goku')
             .addField('Prefix', '&')
             .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
-            .addField("Commandes Fun", "`XD`, `hug', `punch`")
+            .addField("Commandes Fun", "`XD`, `hug`,`punch`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setColor("#0155FE")
        message.channel.sendEmbed(embed);
@@ -72,7 +73,16 @@ bot.on('message', message => {
       sendError(message,"Erreur, problèmes de mentions");
     }
   }
-   
+  if(splitM[0] === (prefix+"punch")){
+    if(splitM.length === 2){
+       let membre = message.guild.member (message.mentions.users.first());
+       if(membre){
+         return message.channel.sendMessage("PRENDS ÇA !");
+       }
+    }else {
+       sendError(message, "Erreur, problèmes de mentions.");
+    }
+  }
 }
   //jeux de mots
 if(message.content === "re" || message.content === "Re"){
