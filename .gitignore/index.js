@@ -72,12 +72,13 @@ bot.on('message', message => {
     }else{
       sendError(message,"Erreur, problèmes de mentions");
     }
-  }else if(splitM[0] === "re"){
+  }
+   
+}
+if(message.content === "re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
    }
-}
-
 });
   bot.on('guildMemberAdd', member =>{
     member.createDM().then(function(channel){
