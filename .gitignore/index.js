@@ -80,10 +80,9 @@ bot.on('message', message => {
        if(membre){
          var r = Math.floor(Math.random()*r.length);
          var embed = DiscordRichEmbed()
-            .setTitle('Punch')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
             .setDescription('**{user}**, donne un sacré coup de poing à **' + membre + '** ! :choqu:')
-            .addField(message.channel.sendFile(coup[r]))
+            .addField('Punch', message.channel.sendFile(coup[r]))
             .setColor("#FE9901")
          message.channel.sendEmbed(embed);
        }
