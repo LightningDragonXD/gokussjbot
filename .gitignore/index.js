@@ -75,11 +75,16 @@ bot.on('message', message => {
     }
   }
   if(splitM[0] === (prefix+"punch")){
-       if(message.mentions.members.size === 0)sendError(message,"Veuillez mentionner une personne.");
-       const membre = message.guild.member(message.mentions.users.first());
-       var r = Math.floor(Math.random()*r.length);      
-       message.channel.sendMessage("**${user}** te donne un sacré coup de poing ! :choqu:");
-       message.channel.sendFile(coup[r]);
+       if(splitM.length === 2){
+          const membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*r.length);      
+            message.channel.sendMessage("**${user}** te donne un sacré coup de poing ! :choqu:");
+            message.channel.sendFile(coup[r]);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
   }
   
 }
