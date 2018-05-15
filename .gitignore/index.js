@@ -79,10 +79,10 @@ bot.on('message', message => {
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
             var r = Math.floor(Math.random()*coup.length);      
-            var embed = new Discord.RichEmbed()
-                .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .setDescription(message.author.toString()+"donne un sacré coup de poing à "+membre+" ! :choqu:")
-                .setImage(coup[r])
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" donne un sacré coup de poing à "+membre+" ! :choqu:")
+                .setImage('https://i.imgur.com/2vSM4o1.png')
                 .setColor("#FE9901")
             message.channel.sendEmbed(embed);
           }
