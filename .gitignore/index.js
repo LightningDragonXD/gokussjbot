@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var mention = "<@401421641097412608>";
+const ytdl = require('ytdl-core');
 var dispatcher;
 const prefix = "&";
 bot.on('ready', function(){
@@ -122,7 +123,7 @@ bot.on('message', message => {
      if(splitM.length === 2){
       if(message.member.voiceChannel){
         message.member.voiceChannel.join().then(connection =>{
-            dispatcher = connection.playBroadcast(splitM[1]);
+            dispatcher = connection.play(ytdl(splitM[1]));
             dispatcher.on('error', e =>{
               console.log('e'); 
             });
