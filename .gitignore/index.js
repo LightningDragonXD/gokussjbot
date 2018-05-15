@@ -73,13 +73,13 @@ bot.on('message', message => {
       sendError(message,"Erreur, problèmes de mentions");
     }
   }
+  var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
   if(splitM[0] === (prefix+"punch")){
-    var coup = ["image/guildarts.gif","image/punch1.gif","image/punch2.gif"];
        if(splitM.length === 2){
-          const membre = message.guild.member(message.mentions.users.first());
+          let membre = message.guild.member(message.mentions.users.first());
           if(membre){
             var r = Math.floor(Math.random()*r.length);      
-            message.channel.sendMessage("**${user}** te donne un sacré coup de poing ! :choqu:");
+            message.channel.sendMessage("**{user}** te donne un sacré coup de poing ! :choqu:");
             return message.channel.sendFile(coup[r]);
           }
        }else {
