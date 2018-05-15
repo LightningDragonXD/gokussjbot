@@ -75,7 +75,7 @@ bot.on('message', message => {
   }
    
 }
-if(message.content === "re"){
+if(message.content === "re" || message.content === "Re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
    }
