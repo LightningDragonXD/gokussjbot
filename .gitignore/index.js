@@ -66,7 +66,7 @@ bot.on('message', message => {
       if(membre){ 
         var r = Math.floor(Math.random()*phrase.length);
           return message.channel.sendMessage(phrase[r]);
-      }else if(membre.bot == true){
+      }else if(splitM[0].author.bot){
         message.reply("Arrête de te moquer de moi. :cry:");
       }
     }else{
@@ -75,6 +75,7 @@ bot.on('message', message => {
   }
    
 }
+  //jeux de mots
 if(message.content === "re" || message.content === "Re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
