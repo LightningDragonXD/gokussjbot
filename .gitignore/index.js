@@ -66,7 +66,7 @@ bot.on('message', message => {
       if(membre){ 
         var r = Math.floor(Math.random()*phrase.length);
           return message.channel.sendMessage(phrase[r]);
-      }else if(message.mentions.bot){
+      }else if(membre == message.guild.membres. get("<@401421641097412608>")){
         message.reply("Arrête de te moquer de moi. :cry:");
       }
     }else{
