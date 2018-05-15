@@ -76,7 +76,7 @@ bot.on('message', message => {
   }
   if(splitM[0] === (prefix+"punch")){
        if(message.mentions.members.size === 0)sendError(message,"Veuillez mentionner une personne.");
-       const membre = message.mentions.members.first();
+       const membre = message.guild.member(message.mentions.users.first());
        var r = Math.floor(Math.random()*r.length);      
        message.channel.sendMessage("**${user}** te donne un sacré coup de poing ! :choqu:");
        message.channel.sendFile(coup[r]);
