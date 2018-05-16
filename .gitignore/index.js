@@ -11,6 +11,8 @@ function sendError(message, description){
    var embed = new Discord.RichEmbed()
             .setColor("#FE0000")
             .setDescription(':x: '+ description)
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp()
   message.channel.sendEmbed(embed);
 }
 
@@ -50,23 +52,51 @@ bot.on('message', message => {
          message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+"ça va")){
-        message.reply("Oui et toi ?");
+        var embed = new Discord.RichEmbed()
+            .setTitle('Réponse')
+            .setColor("#01FE23")
+            .setDescription('Oui et toi ? '+message.author.toString())
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp()
+        message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+"oui")){
-        message.reply("Tant mieux :blush:");
+         var embed = new Discord.RichEmbed()
+            .setTitle('Réponse')
+            .setColor("#01FE23")
+            .setDescription('Tant mieux :blush: '+message.author.toString())
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp()
+        message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+"tu fais quoi ?")){
-        message.reply("J'emmerde les gens :smile: et toi ?");
+         var embed = new Discord.RichEmbed()
+            .setTitle('Réponse')
+            .setColor("#01FE23")
+            .setDescription('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? '+message.author.toString())
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp()
+        message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+rep[0]) || splitM[0] === (prefix+rep[1]) || splitM[0] === (prefix+rep[2]) || splitM[0] === (prefix+rep[3])){
-        message.reply("Cool :blush:");
+         var embed = new Discord.RichEmbed()
+            .setTitle('Réponse')
+            .setColor("#01FE23")
+            .setDescription('Cool :blush: '+message.author.toString())
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp()
+        message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+"rien")){
-        message.reply("Attends, j'arrive !");
+         var embed = new Discord.RichEmbed()
+            .setTitle('Réponse')
+            .setColor("#01FE23")
+            .setDescription('Entraîne-toi avec moi, je cherche un adversaire :smile: '+message.author.toString())
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp()
+        message.channel.sendEmbed(embed);
    }
-  if(splitM[0] === (prefix+"amuse toi bien =3")){
-        message.reply("Merci, toi aussi !");
-  }
+
   if(splitM[0] === (prefix+"botname")){
         bot.user.setUsername(message.substr(9)); 
   }
