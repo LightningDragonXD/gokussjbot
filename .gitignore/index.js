@@ -28,7 +28,7 @@ bot.on('message', message => {
             .setDescription('Liste des commandes de Goku')
             .addField('Prefix', '&')
             .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
-            .addField("Commandes Fun", "`XD`, `hug`,`punch`")
+            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setTimestamp() 
             .setColor("#0155FE")
@@ -145,13 +145,110 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
       }
     }
-    if(splitM[0] === (prefix+"kick")){
-      if(splitM.length === 2){
-        message.guild.kick(message.guild.member(message.mentions.users.first()));
-      }else {
-          sendError(message,"Erreur, problèmes de mentions");
-      }
-    }
+    if(splitM[0] === (prefix +'kick')){
+            let modRole = message.guild.roles.find("name", "Mod");
+            if(!message.member.roles.has(modRole.id)) {
+                return message.channel.sendMessage("", {embed: {
+                          title: "Erreur:",
+                          color: 0xff0000,
+                          description: " :no_entry_sign: Vous n'avez pas la permissions d'utiliser cette commande ! :no_entry_sign: ",
+                          footer: {
+                          text: "Message par Kaneki."
+                          }
+                }}).catch(console.error);
+            } 
+            if(!message.guild.roles.exists("name", "Mod")) {
+                return  message.channel.sendMessage("", {embed: {
+                  title: "Erreur:",
+                  color: 0xff0000,
+                  description: " :no_entry_sign: Le rôle **Mod** n'existe pas dans ce serveur veuillez le créer pour Kick! :no_entry_sign: ",
+                  footer: {
+                  text: "Message par Kaneki."
+                  }
+               }}).catch(console.error);
+           } 
+          if(splitM.length === 2) {
+              return message.channel.sendMessage("", {embed: {
+              title: "Erreur:",
+              color: 0xff0000,
+              description: " :no_entry_sign: Merci de spécifié l'utilisateur que vous voulez Kick. **Format ~> `!kick @mention`** ! :no_entry_sign: ",
+              footer: {
+              text: "Message par Kaneki."
+              }
+              }}).catch(console.error);
+          }
+          let kickMember = message.guild.member(message.mentions.users.first());
+          if(!kickMember) {
+              return message.channel.sendMessage("", {embed: {
+                title: "Erreur:",
+                color: 0xff0000,
+                description: " :x:  L\'utilisateur que vous avez entré n'est pas valide ! :x:",
+                footer: {
+                text: "Message par Kaneki."
+                }
+              }}).catch(console.error);
+          }
+          if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
+              return message.reply("Je n'ai pas la permissions ** __(KICK_MEMBERS)__ **!").catch(console.error);
+          }
+          if(!message.guild.channels.exists("name", "admin-logs")){
+// créer le channel
+              message.guild.createChannel('admin-logs');
+// Affiche un message d'erreur expliquant que le channel n'existait pas
+              return message.channel.sendMessage("", {embed: {
+                  title: "Erreur:",
+                  color: 0xff0000,
+                  description: " :no_entry_sign: Le salon textuel `admin-logs` n'existait pas, je viens de le créer pour vous :white_check_mark: , Veuillez réessayer :wink:",
+                  footer: {
+                  text: "Message par Kaneki."
+                  }
+               }}).catch(console.error);
+           }   
+           kickMember.kick().then(member => {
+                message.channel.sendMessage("", {embed: {
+                  title: "Succès :white_check_mark:",
+                  color: 0xff0000,
+                  description: `${member.user.username}`+` à bien été kick`,
+                  footer: {
+                  text: "Message par Kaneki."
+                  }
+                 }}).catch(console.error);
+          }).then(message.guild.channels.find('name','admin-logs').sendMessage({
+                embed: {
+                 type: 'rich',
+                description: '',
+                fields: [{
+                name: '**L\'utilisateur <~>**',
+                value: kickMember.user.username,
+                inline: true
+                }, {
+                 name: 'User id',
+                 value: kickMember.id,
+                 inline: true
+                },{
+                 name: '**Action <~>**',
+                 value: "Kick",
+                 inline: true
+                },{
+                name: 'Modérateur',
+                value: message.author.username,
+                inline: true
+                }],
+       
+                color: 0xD30000,
+                footer: {
+                text: 'Moderation',
+                proxy_icon_url: ' '
+                },
+
+                author: { 
+                  name: kickMember.user.username + "#"+ kickMember.user.discriminator,
+                    icon_url: " ",
+                    proxy_icon_url: ' '
+                 }
+            }
+          })).catch(console.error);
+        }
     var sang = ["https://i.imgur.com/xTRwnJ6.gif","https://i.imgur.com/LgF2cul.gif","https://i.imgur.com/SD9N08s.gif"];
   if(splitM[0] === (prefix+"psycho")){
        if(splitM.length === 2){
@@ -171,19 +268,16 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-  var philo = ["Le secret du bonheur en amour, ce n'est pas d'être aveugle mais de savoir fermer les yeux quand il le faut.","Le bonheur ne s'acquiert pas, il ne réside pas dans les apparences, chacun d'entre nous le construit à chaque instant de sa vie avec son coeur.","Si la vertu ne suffit pas à assurer le bonheur, la méchanceté suffit à rendre malheureux."];
   var triste = ["https://i.imgur.com/tpyXSxo.gif","https://i.imgur.com/9GnWzJx.gif","https://i.imgur.com/itzVtAZ.gif"];
   if(splitM[0] === (prefix+"sad")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
             var r = Math.floor(Math.random()*triste.length);      
-            var r1 = Math.floor(Math.random()*philo.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
                 .addField(triste[r])
                 .setDescription(message.author.toString()+" fait pleurer "+membre+" ! :sob:")
-                .setImage(philo[r1])
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
                 .setColor("#01FE7F")
