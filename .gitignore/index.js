@@ -51,7 +51,7 @@ bot.on('message', message => {
                 .setColor("#6600FE")
          message.channel.sendEmbed(embed);
    }
-  if(splitM[0] === (prefix+"ça va")){
+  if(splitM[0] === (prefix+"ca va")){
         var embed = new Discord.RichEmbed()
             .setColor("#01FE23")
             .setDescription('Oui et toi ? '+message.author.toString())
@@ -67,7 +67,7 @@ bot.on('message', message => {
             .setTimestamp()
         message.channel.sendEmbed(embed);
    }
-  if(splitM[0] === (prefix+"tu fais quoi ?")){
+  if(splitM[0] === (prefix+"tu fais quoi")){
          var embed = new Discord.RichEmbed()
             .setColor("#01FE23")
             .setDescription('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? '+message.author.toString())
