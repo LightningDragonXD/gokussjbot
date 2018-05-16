@@ -81,7 +81,7 @@ bot.on('message', message => {
       sendError(message,"Erreur, problèmes de mentions");
     }
   }
-  var coup = ["https://i.imgur.com/A5WGQI3.gif","https://i.imgur.com/rak3nEw.gif","https://i.imgur.com/0h9LpJm.gif"];
+  var coup = ["https://i.imgur.com/A5WGQI3.gif","https://i.imgur.com/rak3nEw.gif","https://i.imgur.com/0h9LpJm.gif","https://i.imgur.com/oLrl3ys.gif"];
   if(splitM[0] === (prefix+"punch")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
@@ -152,10 +152,29 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
       }
     }
+    var sang = ["https://i.imgur.com/xTRwnJ6.gif","https://i.imgur.com/LgF2cul.gif","https://steamusercontent-a.akamaihd.net/ugc/929299366846984222/1A23F1354183EF4DE4E30656A34F965D1A156D09/"];
+  if(splitM[0] === (prefix+"psycho")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*coup.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" prend le sang à "+membre+" ! :yum:")
+                .setImage(sang[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#FE9901")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
 }
   //jeux de mots
   var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
-  var ah = ["vril","vion","bois","ssis","llongé","ccroupi"];
+  var ah = ["vril","vion","bois","ssis","llongé","ccroupi", "tchoum","tes souhaits"];
 if(message.content === "re" || message.content === "Re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
