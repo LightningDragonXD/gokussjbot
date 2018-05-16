@@ -164,7 +164,28 @@ bot.on('message', message => {
                 .setImage(sang[r])
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
-                .setColor("#FE9901")
+                .setColor("#FE0000")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
+  var philo = ["Le secret du bonheur en amour, ce n'est pas d'être aveugle mais de savoir fermer les yeux quand il le faut.","Le bonheur ne s'acquiert pas, il ne réside pas dans les apparences, chacun d'entre nous le construit à chaque instant de sa vie avec son coeur.","Si la vertu ne suffit pas à assurer le bonheur, la méchanceté suffit à rendre malheureux."];
+  var triste = ["https://i.imgur.com/tpyXSxo.gif","https://i.imgur.com/9GnWzJx.gif","https://i.imgur.com/itzVtAZ.gif"];
+  if(splitM[0] === (prefix+"sad")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*coup.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .addField(triste[r])
+                .setDescription(message.author.toString()+" fait pleurer "+membre+" ! :sob:")
+                .setImage(sang[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#01FE7F")
             message.channel.sendEmbed(embed);
           }
        }else {
