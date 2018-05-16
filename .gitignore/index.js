@@ -152,7 +152,7 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
       }
     }
-    var sang = ["https://i.imgur.com/xTRwnJ6.gif","https://i.imgur.com/LgF2cul.gif","https://steamusercontent-a.akamaihd.net/ugc/929299366846984222/1A23F1354183EF4DE4E30656A34F965D1A156D09/"];
+    var sang = ["https://i.imgur.com/xTRwnJ6.gif","https://i.imgur.com/LgF2cul.gif","https://i.imgur.com/SD9N08s.gif"];
   if(splitM[0] === (prefix+"psycho")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
