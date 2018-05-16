@@ -157,7 +157,7 @@ bot.on('message', message => {
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
-            var r = Math.floor(Math.random()*coup.length);      
+            var r = Math.floor(Math.random()*sang.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
                 .setDescription(message.author.toString()+" prend le sang à "+membre+" ! :yum:")
@@ -177,12 +177,13 @@ bot.on('message', message => {
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
-            var r = Math.floor(Math.random()*coup.length);      
+            var r = Math.floor(Math.random()*triste.length);      
+            var r1 = Math.floor(Math.random()*philo.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
                 .addField(triste[r])
                 .setDescription(message.author.toString()+" fait pleurer "+membre+" ! :sob:")
-                .setImage(sang[r])
+                .setImage(philo[r1])
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
                 .setColor("#01FE7F")
