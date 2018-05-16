@@ -119,6 +119,24 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
+    
+  if(splitM[0] === (prefix+"like")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){     
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" aime bien "+membre+" :smile:. Tu seras un(e) très bon(ne) ami(e)")
+                .setImage("https://imgur.com/Ro6K1b7.gif")
+                .setColor("#FE0166")
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
   
     if(splitM[0] === (prefix+"ban")){
       if(splitM.length === 2){
