@@ -1,16 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 var mention = "<@401421641097412608>";
-const Music = require("./Music.js");
-const ffmpeg = require("ffmpeg");
-const music = new Music();
-const yt = require("./youtube_plugin");
-const youtube_plugin = new yt();
-const search = require('youtube-search');
-const AuthDetails = require("./auth.json");
-const functionHelper = require('./functionHelpers.js');
-const ytdl = require('ytdl-core');
-var moment = require("moment");
 const prefix = "&";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, &help");
@@ -46,60 +36,7 @@ bot.on('message', message => {
     }
   }
     //bot musique
-  music.setVoiceChannel(message.member.voiceChannel);
-  messages.push(message);
-  if(splitM[0] === (prefix+"play")){
-     message.delete(message.author);
-     if (!music.getVoiceChannel()) return message.reply("Veuillez vous connectez en vocal !");
-            if (music.getTab(0) == null) return message.reply('Aucune musique, merci d\' en ajouté.');
-            else music.voice();
-  }else if(splitM[0] === (prefix+"pause")){
-           message.delete(message.author);
-            if (!music.getVoiceChannel()) return message.reply("Veuillez vous connectez en vocal !");
-            if (music.getTab(0) == null) return message.reply('Aucune musique, merci d\' en ajouté.');
-            music.pause();
-  }else if(splitM[0] === (prefix+"resume")){
-            message.delete(message.author);
-            if (!music.getVoiceChannel()) return message.reply("Veuillez vous connectez en vocal !");
-            if (music.getTab(0) == null) return message.reply('Aucune musique, merci d\' en ajouté.');
-            music.resume();
-  }else if(splitM[0] === (prefix+"stop")){
-           message.delete(message.author);
-            if (!music.getVoiceChannel()) return message.reply("Veuillez vous connectez en vocal !");
-            if (music.getTab(0) == null) return message.reply('Aucune musique, merci d\' en ajouté.');
-            else music.stop();
-            message.reply("La playlist à était vidée !");
-  }else if(splitM[0] === (prefix+"add")){
-           message.delete(message.author);
-            var link = msgc.split(' ');
-            link.shift();
-            link = link.join(' ');
-            search(link, opts, function(err, results) {
-                if(err) return con(err);
-                for (var y = 0; results[y].kind == 'youtube#channel'; y++);
-                message.channel.sendMessage(results[y].link);
-                music.setTabEnd(results[y].link);
-            });
-  }else if(splitM[0] === (prefix+"link")){
-            message.delete(message.author);
-            var link = msgc.split(' ');
-            link.shift();
-            link = link.join(' ');
-            con(link);
-            music.setTabEnd(link);
-  }else if(splitM[0] === (prefix+"volume")){
-           message.delete(message.author);
-            var link = msgc.split(' ');
-            link.shift();
-            link = link.join(' ');
-            music.volume(link/100);
-            message.reply("le volume est maintenant à : " + link);
-  }else if(splitM[0] === (prefix+"next")){
-            message.delete(message.author);
-            if (music.getI() < music.getLengthTab()) music.setI(this.i + 1);
-            if (music.getI() >= music.getLengthTab()) music.setI(0);
-            music.next(); 
-  }
+
   var reveille = ["https://i.imgur.com/6XWJUPl.gif","https://i.imgur.com/Khl3DLb.gif","https://i.imgur.com/H67C3jV.gif"];
   if(splitM[0] === (prefix+'bonjour')){
         var r = Math.floor(Math.random()*reveille.length);
