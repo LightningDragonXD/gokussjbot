@@ -28,7 +28,7 @@ bot.on('message', message => {
             .setDescription('Liste des commandes de Goku')
             .addField('Prefix', '&')
             .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
-            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`")
+            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`, `kiss`, `angry`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setTimestamp() 
             .setColor("#0155FE")
@@ -52,44 +52,21 @@ bot.on('message', message => {
          message.channel.sendEmbed(embed);
    }
   if(splitM[0] === (prefix+"ca va")){
-        var embed = new Discord.RichEmbed()
-            .setColor("#01FE23")
-            .setDescription('Oui et toi ? '+message.author.toString())
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setTimestamp()
-        message.channel.sendEmbed(embed);
+        message.reply('Oui et toi ? ');
+
    }
   if(splitM[0] === (prefix+"oui")){
-         var embed = new Discord.RichEmbed()
-            .setColor("#01FE23")
-            .setDescription('Tant mieux :blush: '+message.author.toString())
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setTimestamp()
-        message.channel.sendEmbed(embed);
+            message.reply('Tant mieux :blush: ');
    }
   if(splitM[0] === (prefix+"tu fais quoi")){
-         var embed = new Discord.RichEmbed()
-            .setColor("#01FE23")
-            .setDescription('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? '+message.author.toString())
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setTimestamp()
-        message.channel.sendEmbed(embed);
+    message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
    }
   if(splitM[0] === (prefix+rep[0]) || splitM[0] === (prefix+rep[1]) || splitM[0] === (prefix+rep[2]) || splitM[0] === (prefix+rep[3])){
-         var embed = new Discord.RichEmbed()
-            .setColor("#01FE23")
-            .setDescription('Cool :blush: '+message.author.toString())
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setTimestamp()
-        message.channel.sendEmbed(embed);
+        message.reply('Cool :blush:');
    }
   if(splitM[0] === (prefix+"rien")){
-         var embed = new Discord.RichEmbed()
-            .setColor("#01FE23")
-            .setDescription('Entraîne-toi avec moi, je cherche un adversaire :smile: '+message.author.toString())
-            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-            .setTimestamp()
-        message.channel.sendEmbed(embed);
+    message.reply('Entraîne-toi avec moi, je cherche un adversaire :smile: ');
+       
    }
 
   if(splitM[0] === (prefix+"botname")){
@@ -106,7 +83,7 @@ bot.on('message', message => {
       sendError(message,"Erreur, problèmes de mentions");
     }
   }
-  var coup = ["https://i.imgur.com/A5WGQI3.gif","https://i.imgur.com/rak3nEw.gif","https://i.imgur.com/0h9LpJm.gif","https://i.imgur.com/oLrl3ys.gif"];
+  var coup = ["https://i.imgur.com/1p128KA.gif","https://i.imgur.com/A5WGQI3.gif","https://i.imgur.com/rak3nEw.gif","https://i.imgur.com/0h9LpJm.gif","https://i.imgur.com/oLrl3ys.gif","https://i.imgur.com/pudoR63.gif"];
   if(splitM[0] === (prefix+"punch")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
@@ -144,15 +121,16 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-    
+    var like = ["https://media.giphy.com/media/hOVjFUBGhYoCY/giphy.gif","https://imgur.com/Ro6K1b7.gif"];
   if(splitM[0] === (prefix+"like")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){     
+            var r = Math.floor(Math.random()*like.length);
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
                 .setDescription(message.author.toString()+" aime bien "+membre+" :smile:. Tu seras un(e) très bon(ne) ami(e)")
-                .setImage("https://imgur.com/Ro6K1b7.gif")
+                .setImage(like[r])
                 .setColor("#FE0166")
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
@@ -209,6 +187,44 @@ bot.on('message', message => {
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
                 .setColor("#01FE7F")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
+      var kiss = ["https://i.imgur.com/LhTCe1J.gif","https://i.imgur.com/OAD1UH7.gif","https://i.imgur.com/dqd4b3w.gif"];
+    if(splitM[0] === (prefix+"kiss")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*kiss.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" embrasse tendrement "+membre+" ! :heart:")
+                .setImage(kiss[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#FE0166")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
+       var angry = ["https://i.imgur.com/HBF4OxN.gif","https://i.imgur.com/jDn8qTe.gif","https://i.imgur.com/2YuwEtl.gif","https://i.imgur.com/yXhfyl2.gif"];
+    if(splitM[0] === (prefix+"angry")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*angry.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" a mis en colère "+membre+" ! :angry:")
+                .setImage(angry[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#FE0000")
             message.channel.sendEmbed(embed);
           }
        }else {
