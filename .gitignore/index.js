@@ -28,7 +28,7 @@ bot.on('message', message => {
             .setDescription('Liste des commandes de Goku')
             .addField('Prefix', '&')
             .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
-            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`, `kiss`, `angry`")
+            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`, `kiss`, `angry`,`food`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setTimestamp() 
             .setColor("#0155FE")
@@ -220,9 +220,28 @@ bot.on('message', message => {
             var r = Math.floor(Math.random()*angry.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .setDescription(message.author.toString()+" a mis en colère "+membre+" ! :angry:")
+                .setDescription(message.author.toString()+" a été mis en colère par "+membre+" ! :angry:")
                 .setImage(angry[r])
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#FE0000")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
+    var bouffe = ["https://media1.tenor.com/images/9dd7ce7b03318b1128fbc3db20b39e12/tenor.gif?itemid=7677147","https://media1.tenor.com/images/8204afac2ff2506dd8b9249091e4fe3e/tenor.gif?itemid=4567076","http://ekladata.com/8B0pEoNzYrBfBC19aoeyR2B2FBU.gif","https://i.imgur.com/WUHrVOn.gif"];
+    if(splitM[0] === (prefix+"food")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*bouffe.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" donne faim à "+membre+" ! Oh mon dieu même moi j'ai faim ! :yum:")
+                .setImage(bouffe[r])
+                .setFooter('Créer par Goku(Dédi à Claire XD)', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
                 .setColor("#FE0000")
             message.channel.sendEmbed(embed);
