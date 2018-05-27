@@ -254,7 +254,7 @@ bot.on('message', message => {
        if(splitM.length === 1){     
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .setDescription"BOOM ! APPARITION !")
+                .setDescription("BOOM ! APPARITION !")
                 .setImage("https://i.imgur.com/eQwP4M7.gif")
                 .setFooter('Créer par Goku(Dédi à Claire XD)', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
@@ -269,7 +269,7 @@ bot.on('message', message => {
        if(splitM.length === 1){     
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .setDescription"ABRACADABRA !")
+                .setDescription("ABRACADABRA !")
                 .setImage("https://i.imgur.com/ez2Lk0r.gif")
                 .setFooter('Créer par Goku(Dédi à Claire XD)', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
