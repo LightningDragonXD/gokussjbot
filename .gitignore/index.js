@@ -265,6 +265,21 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de paramètres");
        }
   }
+  if(splitM[0] === (prefix+"disparition")){
+       if(splitM.length === 1){     
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription"ABRACADABRA !")
+                .setImage("https://i.imgur.com/ez2Lk0r.gif")
+                .setFooter('Créer par Goku(Dédi à Claire XD)', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#40A497")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de paramètres");
+       }
+  }
 }
   //jeux de mots
   var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
