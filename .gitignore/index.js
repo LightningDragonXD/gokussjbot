@@ -260,7 +260,7 @@ bot.on('message', message => {
                 .setTimestamp()
                 .setColor("#40A497")
             message.channel.sendEmbed(embed);
-          }
+          
        }else {
           sendError(message,"Erreur, problèmes de paramètres");
        }
@@ -275,7 +275,7 @@ bot.on('message', message => {
                 .setTimestamp()
                 .setColor("#40A497")
             message.channel.sendEmbed(embed);
-          }
+          
        }else {
           sendError(message,"Erreur, problèmes de paramètres");
        }
