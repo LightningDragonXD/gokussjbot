@@ -243,11 +243,26 @@ bot.on('message', message => {
                 .setImage(bouffe[r])
                 .setFooter('Créer par Goku(Dédi à Claire XD)', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
-                .setColor("#FE0000")
+                .setColor("#40A497")
             message.channel.sendEmbed(embed);
           }
        }else {
           sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
+    if(splitM[0] === (prefix+"boom")){
+       if(splitM.length === 1){     
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription"BOOM ! APPARITION !")
+                .setImage("https://i.imgur.com/eQwP4M7.gif")
+                .setFooter('Créer par Goku(Dédi à Claire XD)', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#40A497")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de paramètres");
        }
   }
 }
