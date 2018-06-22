@@ -28,7 +28,7 @@ bot.on('message', message => {
             .setDescription('Liste des commandes de Goku')
             .addField('Prefix', '&')
             .addField("Discuter avec Goku", "`bonjour`, `ça va`, `tu fais quoi ?`, `rien`, `je joue`, `je parle`, `j'écoute de la musique`, `je regarde un anime`")
-            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`, `kiss`, `angry`,`food`")
+            .addField("Commandes Fun", "`XD`, `hug`, `punch`, `like`, `psycho`, `sad`, `kiss`, `angry`,`food`,`boom`, `disparition`,`USOS`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setTimestamp() 
             .setColor("#0155FE")
