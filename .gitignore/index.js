@@ -280,11 +280,11 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de paramètres");
        }
   }
-    if(splitM[0] === (prefix+"UNITED STATES OF SMASH")){
+    if(splitM[0] === (prefix+"USOS")){
        if(splitM.length === 2){     
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('ALL MIGHT', 'https://i.imgur.com/qDTIwqD.png')
-                .setDescription("ADIEUUUUX !")
+                .setDescription("ADIEUUUUX ! UNITED STATES OF SMAAAAAAAASH !")
                 .setImage("https://i.imgur.com/og9WuUX.gif")
                 .setFooter('Créer par ALL MIGHT', 'https://i.imgur.com/qDTIwqD.png')     
                 .setTimestamp()
