@@ -280,6 +280,21 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de paramètres");
        }
   }
+    if(splitM[0] === (prefix+"UNITED STATES OF SMASH")){
+       if(splitM.length === 2){     
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('ALL MIGHT', 'https://i.imgur.com/qDTIwqD.png')
+                .setDescription("ADIEUUUUX !")
+                .setImage("https://i.imgur.com/og9WuUX.gif")
+                .setFooter('Créer par ALL MIGHT', 'https://i.imgur.com/qDTIwqD.png')     
+                .setTimestamp()
+                .setColor("#40A497")
+            message.channel.sendEmbed(embed);
+          
+       }else {
+          sendError(message,"Erreur, problèmes de paramètres");
+       }
+  }
 }
   //jeux de mots
   var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
