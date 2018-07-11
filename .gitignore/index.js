@@ -15,7 +15,7 @@ function sendError(message, description){
             .setTimestamp()
   message.channel.sendEmbed(embed);
 }
-
+//liste de commandes
 bot.on('message', message => {
   //commandes
   if(message.content[0] === prefix){
@@ -38,7 +38,37 @@ bot.on('message', message => {
     }
   }
     //bot musique
-
+ if (splitM[0] === (prefix+'!play')) {
+    // On récupère le premier channel audio du serveur
+   if(splitM.length === 2){
+    let voiceChannel = message.guild.channels
+      .filter(function (channel) { return channel.type === 'voice' })
+      .first()
+    // On récupère les arguments de la commande 
+    // il faudrait utiliser une expression régulière pour valider le lien youtube
+    let args = message.content.split(' ')
+    // On rejoint le channel audio
+    voiceChannel
+      .join()
+      .then(function (connection) {
+        // On démarre un stream à partir de la vidéo youtube
+        let stream = YoutubeStream(args[1])
+        stream.on('error', function () {
+          message.reply("Je n'ai pas réussi à lire cette vidéo :(")
+          connection.disconnect()
+        })
+        // On envoie le stream au channel audio
+        // Il faudrait ici éviter les superpositions (envoie de plusieurs vidéo en même temps)
+        connection
+          .playStream(stream)
+          .on('end', function () {
+            connection.disconnect()
+          })
+      })
+   }else{
+      sendError(message,"Erreur, problèmes dans les paramètres.");
+   }
+  }
   var reveille = ["https://i.imgur.com/6XWJUPl.gif","https://i.imgur.com/Khl3DLb.gif","https://i.imgur.com/H67C3jV.gif"];
   if(splitM[0] === (prefix+'bonjour')){
         var r = Math.floor(Math.random()*reveille.length);
