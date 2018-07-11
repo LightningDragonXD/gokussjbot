@@ -309,8 +309,8 @@ if(message.content === "re" || message.content === "Re"){
    }
 });
   bot.on('guildMemberAdd', member =>{
-    member.guild.channels.find("name", "général").send('La cavalerie est là ! Voilà ${member.user.username}')
-    /*member.createDM().then(function(channel){  
+    member.guild.channels.find("name", "general").send('La cavalerie est là ! Voilà ${member.user.username}')
+    member.createDM().then(function(channel){  
       var embed = new Discord.RichEmbed();
             embed.setTitle('Règles du Serveur')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
@@ -322,7 +322,7 @@ if(message.content === "re" || message.content === "Re"){
       channel.sendEmbed(embed);
       return 
 
-    })*/
+    })
   });
   bot.on('guildMemberRemove', member =>{
     member.createDM().then(function(channel){
