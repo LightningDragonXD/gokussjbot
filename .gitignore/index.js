@@ -309,7 +309,7 @@ if(message.content === "re" || message.content === "Re"){
    }
 });
   bot.on('guildMemberAdd', member =>{
-    member.guild.channels.find("name", "general").send('La cavalerie est là ! Voilà ${member.user.tag} !')
+    member.guild.channels.find("name", "general").send(`La cavalerie est là ! Voilà ${member.user.username} !`)
     member.createDM().then(function(channel){  
       var embed = new Discord.RichEmbed();
             embed.setTitle('Règles du Serveur')
