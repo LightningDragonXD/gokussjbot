@@ -310,7 +310,8 @@ if(message.content === "re" || message.content === "Re"){
 });
   bot.on('guildMemberAdd', member =>{
     member.createDM().then(function(channel){
-        var embed = new Discord.RichEmbed();
+      channel.send("La cavalerie est là !")  
+      var embed = new Discord.RichEmbed();
             embed.setTitle('Règles du Serveur')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
             .setDescription('Liste des des règles à RESPECTER')
@@ -319,7 +320,7 @@ if(message.content === "re" || message.content === "Re"){
             .setTimestamp() 
             .setColor("#0155FE")
       channel.sendEmbed(embed);
-      return channel.send("La cavalerie est là !")
+      return 
 
     })
   });
