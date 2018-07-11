@@ -310,8 +310,18 @@ if(message.content === "re" || message.content === "Re"){
 });
   bot.on('guildMemberAdd', member =>{
     member.createDM().then(function(channel){
-        return channel.send("Bienvenue dans le monde du Japon, Amuse-toi bien avec nous à découvrir ce monde. :blush:")
+        var embed = new Discord.RichEmbed();
+            embed.setTitle('Règles du Serveur')
+            .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+            .setDescription('Liste des des règles à RESPECTER')
+            .addField("Règles Importantes", "`RESPECTER les joueurs/joueuses`\n `Pas d'insultes`\n `Pas de spam`")
+            .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+            .setTimestamp() 
+            .setColor("#0155FE")
+      channel.sendEmbed(embed);
+      return
     })
+    message.channel.send("La cavalerie est là !")
   });
   bot.on('guildMemberRemove', member =>{
     member.createDM().then(function(channel){
