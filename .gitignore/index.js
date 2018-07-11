@@ -309,7 +309,7 @@ if(message.content === "re" || message.content === "Re"){
    }
 });
   bot.on('guildMemberAdd', member =>{
-    member.guild.channels.find("name", "general").send(`La cavalerie est là ! Voilà ${member.user.username} !`)
+    member.guild.channels.find("name", "general").send(`La cavalerie est là ! Voilà **${member.user.username}** !`)
     member.createDM().then(function(channel){  
       var embed = new Discord.RichEmbed();
             embed.setTitle('Règles du Serveur')
@@ -326,7 +326,7 @@ if(message.content === "re" || message.content === "Re"){
   });
   bot.on('guildMemberRemove', member =>{
     member.createDM().then(function(channel){
-        return channel.send("Au revoir, nous espérons te revoir bientôt dans ce monde merveilleux qui est le Japon. :blush:")
+        return member.guild.channels.find("name", "general").send(`**${member.user.username}** est partie du serveur. Au plaisir de te revoir !`)
     })
 });
 bot.login(process.env.TOKEN);
