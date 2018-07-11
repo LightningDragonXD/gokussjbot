@@ -319,9 +319,9 @@ if(message.content === "re" || message.content === "Re"){
             .setTimestamp() 
             .setColor("#0155FE")
       channel.sendEmbed(embed);
-      return
+      return channel.send("La cavalerie est là !")
+
     })
-    message.channel.send("La cavalerie est là !")
   });
   bot.on('guildMemberRemove', member =>{
     member.createDM().then(function(channel){
