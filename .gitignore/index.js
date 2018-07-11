@@ -315,7 +315,7 @@ if(message.content === "re" || message.content === "Re"){
             embed.setTitle('Règles du Serveur')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
             .setDescription('Liste des des règles à RESPECTER')
-            .addField("Règles Importantes", "`RESPECTER les joueurs/joueuses`\n `Pas d'insultes`\n `Pas de spam`")
+            .addField("Règles Importantes", "`RESPECTER les joueurs/joueuses`\n\n`Pas d'insultes`\n\n`Pas de spam`\n\n`de prochaines règles seront à venir`")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setTimestamp() 
             .setColor("#0155FE")
