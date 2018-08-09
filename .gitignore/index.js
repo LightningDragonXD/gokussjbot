@@ -315,7 +315,7 @@ if(message.content === "re" || message.content === "Re"){
             embed.setTitle('Règles du Serveur')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
             .setDescription('Liste des des règles à RESPECTER')
-            .addField("Règles Importantes", "`RESPECTER les joueurs/joueuses`\n\n`Pas d'insultes SAUF amicales (pour jouer et avec des personnes que vous connaissez)`\n\n`Pas de spam`\n\n`Si vous avez un différent avec un autre membre, appeler un membre du Staff`\n\n`Si vous voulez vos problèmes tout(e) seul(e), faites le par message privé`\n\n`RESPECTER les salons`\n\n`TOUT le monde est au niveau, donc aimez-vous les uns et les autres`\n\n`de prochaines règles seront à venir`\n\nPour non-respect des règles, vous serez SANCTIONNE !")
+            .addField("Règles Importantes", "`RESPECTER les joueurs/joueuses`\n\n`Pas d'insultes SAUF amicales (pour jouer et avec des personnes que vous connaissez)`\n\n`Pas de spam`\n\n`Si vous avez un différent avec un autre membre, appeler un membre du Staff`\n\n`Si vous voulez régler vos problèmes tout(e) seul(e), faites le par message privé`\n\n`RESPECTER les salons`\n\n`TOUT le monde est au même niveau, donc aimez-vous les uns et les autres`\n\n`de prochaines règles seront à venir`\n\nPour non-respect des règles, vous serez SANCTIONNE !")
             .addField("Choisir sa faction Héro ou Vilain","$fc join Héro ou Vilain")
             .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
             .setTimestamp() 
