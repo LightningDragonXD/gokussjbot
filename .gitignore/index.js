@@ -182,8 +182,8 @@ bot.on('message', message => {
             var r = Math.floor(Math.random()*triste.length);      
             var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .addField(triste[r])
                 .setDescription(message.author.toString()+" fait pleurer "+membre+" ! :sob:")
+                .setImage(triste[r])
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
                 .setColor("#01FE7F")
