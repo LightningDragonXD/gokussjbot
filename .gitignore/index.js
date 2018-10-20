@@ -39,36 +39,6 @@ bot.on('message', message => {
   }
     //bot musique
 
-  var reveille = ["https://i.imgur.com/6XWJUPl.gif","https://i.imgur.com/Khl3DLb.gif","https://i.imgur.com/H67C3jV.gif"];
-  if(splitM[0] === (prefix+'bonjour')){
-        var r = Math.floor(Math.random()*reveille.length);
-        var embed = new Discord.RichEmbed();
-                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
-                .setDescription(message.author.toString()+"Bonjour à toi :smile:")
-                .setImage(reveille[r])
-                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
-                .setTimestamp()
-                .setColor("#6600FE")
-         message.channel.sendEmbed(embed);
-   }
-  if(splitM[0] === (prefix+"ca va")){
-        message.reply('Oui et toi ? ');
-
-   }
-  if(splitM[0] === (prefix+"oui")){
-            message.reply('Tant mieux :blush: ');
-   }
-  if(splitM[0] === (prefix+"tu fais quoi")){
-    message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
-   }
-  if(splitM[0] === (prefix+rep[0]) || splitM[0] === (prefix+rep[1]) || splitM[0] === (prefix+rep[2]) || splitM[0] === (prefix+rep[3])){
-        message.reply('Cool :blush:');
-   }
-  if(splitM[0] === (prefix+"rien")){
-    message.reply('Entraîne-toi avec moi, je cherche un adversaire :smile: ');
-       
-   }
-
   if(splitM[0] === (prefix+"botname")){
         bot.user.setUsername(message.substr(9)); 
   }
@@ -306,6 +276,35 @@ if(message.content === "re" || message.content === "Re"){
   if(message.content === "ah" || message.content === "Ah"){
      var r = Math.floor(Math.random()*ah.length);
      return message.channel.sendMessage(ah[r]);
+   }
+  var reveille = ["https://i.imgur.com/6XWJUPl.gif","https://i.imgur.com/Khl3DLb.gif","https://i.imgur.com/H67C3jV.gif"];
+  if(message.content === 'bonjour'){
+        var r = Math.floor(Math.random()*reveille.length);
+        var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+"Bonjour à toi :smile:")
+                .setImage(reveille[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#6600FE")
+         message.channel.sendEmbed(embed);
+   }
+  if(message.content === "ca va"){
+        message.reply('Oui et toi ? ');
+
+   }
+  if(message.content === "oui"){
+            message.reply('Tant mieux :blush: ');
+   }
+  if(message.content === "tu fais quoi"){
+    message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
+   }
+  if(message.content === (prefix+rep[0]) || splitM[0] === (prefix+rep[1]) || splitM[0] === (prefix+rep[2]) || splitM[0] === (prefix+rep[3])){
+        message.reply('Cool :blush:');
+   }
+  if(message.content === "rien"){
+    message.reply('Entraîne-toi avec moi, je cherche un adversaire :smile: ');
+       
    }
 });
   bot.on('guildMemberAdd', member =>{
