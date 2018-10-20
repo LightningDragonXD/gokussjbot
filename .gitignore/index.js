@@ -19,9 +19,9 @@ function sendError(message, description){
 bot.on('message', message => {
   //commandes
   if(message.content[0] === prefix){
-  let splitM = message.content.split(" ");
-  if(splitM[0] === (prefix+'help')){
-    if(splitM.length === 1){
+    let splitM = message.content.split(" ");
+    if(splitM[0] === (prefix+'help')){
+      if(splitM.length === 1){
        var embed = new Discord.RichEmbed();
             embed.setTitle('Help')
             .setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
@@ -33,11 +33,11 @@ bot.on('message', message => {
             .setTimestamp() 
             .setColor("#0155FE")
        message.channel.sendEmbed(embed);
-    }else{
+      }else{
         sendError(message,"Erreur, problèmes dans les paramètres.");
+      }
     }
-  }
-  }
+  
     //bot musique
 
   if(splitM[0] === (prefix+"botname")){
@@ -274,7 +274,7 @@ bot.on('message', message => {
 if(message.content === "re" || message.content === "Re"){
      var r = Math.floor(Math.random()*re.length);
      return message.channel.sendMessage(re[r]);
-   }
+}
   if(message.content === "ah" || message.content === "Ah"){
      var r = Math.floor(Math.random()*ah.length);
      return message.channel.sendMessage(ah[r]);
@@ -301,7 +301,7 @@ if(message.content === "re" || message.content === "Re"){
   if(message.content === "tu fais quoi"){
           return message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
    }
-  if(message.content === (prefix+rep[0]) || splitM[0] === (prefix+rep[1]) || splitM[0] === (prefix+rep[2]) || splitM[0] === (prefix+rep[3])){
+  if(message.content === rep[0] || message.content === rep[1] || message.content === rep[2] || message.content === rep[3]){
         return message.reply('Cool :blush:');
    }
   if(message.content === "rien"){
