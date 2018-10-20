@@ -5,7 +5,7 @@ const prefix = "&";
 bot.on('ready', function(){
   bot.user.setGame("DBZ, &help");
 });
-var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
+
 var phrase = ["Tu pues du cul !","Tu es un trans ? :joy:","Askip tu as un pc en carton :yum:","Si y a ton ex qui te dit : tu retrouvera jamais quelqu'un comme moi . dit lui : heureusement","T'es comme France 2 personne te regarde.","Tu ne m'arrives pas à la cheville mais si un jour tu l'atteints, soit gentil(le) et fais moi mes lacets.","Commence par t'occuper de ton cul, au vue de la superficie cela devrait t'occuper pour longtemps !","-Tu sais ce qui est bien chez toi?\n-Nan\n-Bah moi non plus","- Tu viens à ma soirée fruits de mer et poissons ?\n- Oui avec plaisir\n- Tant mieux j'avais besoin d'un thon","Ta bouche c'est comme une porte, ça se ferme!" ];
 function sendError(message, description){
    var embed = new Discord.RichEmbed()
@@ -267,6 +267,7 @@ bot.on('message', message => {
   }
 }
   //jeux de mots
+  var rep = ["je joue","je parle","j'écoute de la musique","je regarde un anime"];
   var re = ["nard","quin","pas","passage","tard","bond","naud","mise","belle","bique","tour"];
   var ah = ["vril","vion","bois","ssis","llongé","ccroupi", "tchoum","tes souhaits"];
 if(message.content === "re" || message.content === "Re"){
@@ -278,7 +279,7 @@ if(message.content === "re" || message.content === "Re"){
      return message.channel.sendMessage(ah[r]);
    }
   var reveille = ["https://i.imgur.com/6XWJUPl.gif","https://i.imgur.com/Khl3DLb.gif","https://i.imgur.com/H67C3jV.gif"];
-  if(message.content === 'bonjour'){
+  if(message.content === "bonjour"){
         var r = Math.floor(Math.random()*reveille.length);
         var embed = new Discord.RichEmbed();
                 embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
@@ -287,20 +288,20 @@ if(message.content === "re" || message.content === "Re"){
                 .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
                 .setTimestamp()
                 .setColor("#6600FE")
-         message.channel.sendEmbed(embed);
+         return message.channel.sendEmbed(embed);
    }
   if(message.content === "ca va"){
-        message.reply('Oui et toi ? ');
+        return message.reply('Oui et toi ? ');
 
    }
   if(message.content === "oui"){
-            message.reply('Tant mieux :blush: ');
+           return message.reply('Tant mieux :blush: ');
    }
   if(message.content === "tu fais quoi"){
-    message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
+          return message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
    }
   if(message.content === (prefix+rep[0]) || splitM[0] === (prefix+rep[1]) || splitM[0] === (prefix+rep[2]) || splitM[0] === (prefix+rep[3])){
-        message.reply('Cool :blush:');
+        return message.reply('Cool :blush:');
    }
   if(message.content === "rien"){
     message.reply('Entraîne-toi avec moi, je cherche un adversaire :smile: ');
