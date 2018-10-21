@@ -73,7 +73,7 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-    var calin = ["https://i.imgur.com/g5qHUlx.gif","https://i.imgur.com/EfobnJ4.gif","https://i.imgur.com/hZhO8vW.gif","https://i.imgur.com/OjmPBRj.gif"];
+    var calin = ["https://i.imgur.com/8qde7Wc.gif","https://i.imgur.com/rYrTbDQ.gif","https://i.imgur.com/g5qHUlx.gif","https://i.imgur.com/EfobnJ4.gif","https://i.imgur.com/hZhO8vW.gif","https://i.imgur.com/OjmPBRj.gif"];
   if(splitM[0] === (prefix+"hug")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
@@ -126,8 +126,8 @@ bot.on('message', message => {
               sendError(message,"Erreur, problèmes de mentions");
           }
         }
-    var sang = ["https://i.imgur.com/xTRwnJ6.gif","https://i.imgur.com/LgF2cul.gif","https://i.imgur.com/SD9N08s.gif"];
-  if(splitM[0] === (prefix+"psycho")){
+    var sang = ["https://i.imgur.com/GXtaS5q.gif","https://i.imgur.com/xTRwnJ6.gif","https://i.imgur.com/LgF2cul.gif","https://i.imgur.com/SD9N08s.gif"];
+  if(splitM[0] === (prefix+"bloodsuck")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
           if(membre){
@@ -145,7 +145,26 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-  var triste = ["https://i.imgur.com/tpyXSxo.gif","https://i.imgur.com/9GnWzJx.gif","https://i.imgur.com/itzVtAZ.gif"];
+    var tickle = ["https://i.imgur.com/Orl0n6r.gif","https://i.imgur.com/R68JMAb.gif","https://i.imgur.com/ZZuTTNX.gif"];
+  if(splitM[0] === (prefix+"tickle")){
+       if(splitM.length === 2){
+          let membre = message.guild.member(message.mentions.users.first());
+          if(membre){
+            var r = Math.floor(Math.random()*tickle.length);      
+            var embed = new Discord.RichEmbed();
+                embed.setAuthor('Goku', 'https://i.imgur.com/2vSM4o1.png')
+                .setDescription(message.author.toString()+" chatouille "+membre+" ! :joy:")
+                .setImage(tickle[r])
+                .setFooter('Créer par Goku', 'https://i.imgur.com/2vSM4o1.png')     
+                .setTimestamp()
+                .setColor("#FE0000")
+            message.channel.sendEmbed(embed);
+          }
+       }else {
+          sendError(message,"Erreur, problèmes de mentions");
+       }
+  }
+  var triste = ["https://i.imgur.com/cgeN5Cu.gif","https://i.imgur.com/tpyXSxo.gif","https://i.imgur.com/9GnWzJx.gif","https://i.imgur.com/itzVtAZ.gif"];
   if(splitM[0] === (prefix+"sad")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
@@ -164,7 +183,7 @@ bot.on('message', message => {
           sendError(message,"Erreur, problèmes de mentions");
        }
   }
-      var kiss = ["https://i.imgur.com/LhTCe1J.gif","https://i.imgur.com/OAD1UH7.gif","https://i.imgur.com/dqd4b3w.gif"];
+      var kiss = ["https://i.imgur.com/OnabSmr.gif","https://i.imgur.com/CJ4qnQ7.gif","https://i.imgur.com/LhTCe1J.gif","https://i.imgur.com/OAD1UH7.gif","https://i.imgur.com/dqd4b3w.gif"];
     if(splitM[0] === (prefix+"kiss")){
        if(splitM.length === 2){
           let membre = message.guild.member(message.mentions.users.first());
@@ -291,20 +310,20 @@ if(message.content === "re" || message.content === "Re"){
                 .setColor("#6600FE")
          return message.channel.sendEmbed(embed);
    }
-  if(message.content === "ca va"){
+  if(message.content === "ça va" || message.content === "ca va"){
         return message.reply('Oui et toi ? ');
 
    }
-  if(message.content === "oui"){
+  if(message.content === "oui" || message.content === "Oui"){
            return message.reply('Tant mieux :blush: ');
    }
-  if(message.content === "tu fais quoi"){
+  if(message.content === "tu fais quoi ?" || message.content === "Tu fais quoi ?"){
           return message.reply('Je joue à Dragon Ball Z, Vegeta est trop fort au jeu et toi ? ');
    }
   if(message.content === rep[0] || message.content === rep[1] || message.content === rep[2] || message.content === rep[3]){
         return message.reply('Cool :blush:');
    }
-  if(message.content === "rien"){
+  if(message.content === "rien" || message.content === "Rien"){
     return message.reply('Entraîne-toi avec moi, je cherche un adversaire :smile: ');
        
    }
